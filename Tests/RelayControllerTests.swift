@@ -36,13 +36,6 @@ private final class StubOCRURLProtocol: URLProtocol {
   override func stopLoading() {}
 }
 
-/// Supplies an embedded Debug credential without reading the host Keychain.
-private final class StubConfigurationBundle: Bundle, @unchecked Sendable {
-  override func object(forInfoDictionaryKey key: String) -> Any? {
-    key == "GeminiDefaultAPIKey" ? "test-api-key" : nil
-  }
-}
-
 @MainActor
 final class RelayControllerTests: XCTestCase {
   private var suiteName: String!
@@ -65,9 +58,20 @@ final class RelayControllerTests: XCTestCase {
   }
 
   private func makeController() throws -> (RelayController, SharedRelayStore) {
+    let bundleURL = directoryURL.appendingPathComponent("TestConfiguration.bundle")
+    try FileManager.default.createDirectory(at: bundleURL, withIntermediateDirectories: true)
+    let bundleInfo = try PropertyListSerialization.data(
+      fromPropertyList: [
+        "CFBundleIdentifier": "com.example.GeminiVoiceSample.TestConfiguration",
+        "GeminiDefaultAPIKey": "test-api-key",
+      ],
+      format: .xml,
+      options: 0
+    )
+    try bundleInfo.write(to: bundleURL.appendingPathComponent("Info.plist"), options: .atomic)
     let configuration = AppConfiguration(
       defaults: defaults,
-      bundle: try XCTUnwrap(StubConfigurationBundle(path: Bundle.main.bundlePath))
+      bundle: try XCTUnwrap(Bundle(url: bundleURL))
     )
     let store = SharedRelayStore(defaults: defaults)
     store.resetForTesting()

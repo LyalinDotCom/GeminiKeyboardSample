@@ -9,6 +9,20 @@
       <BuildActionEntries>
          <BuildActionEntry
             buildForTesting = "YES"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "DDB96F8FEA06CD79C7CD2EE7"
+               BuildableName = "GeminiKeyboardPortTests.xctest"
+               BlueprintName = "GeminiKeyboardPortTests"
+               ReferencedContainer = "container:GeminiVoiceKeyboard.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
             buildForRunning = "YES"
             buildForProfiling = "YES"
             buildForArchiving = "YES"
@@ -115,6 +129,17 @@
                BlueprintIdentifier = "3CDBB14042DE64B20DC777EF"
                BuildableName = "GeminiVoiceUITests.xctest"
                BlueprintName = "GeminiVoiceUITests"
+               ReferencedContainer = "container:GeminiVoiceKeyboard.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "DDB96F8FEA06CD79C7CD2EE7"
+               BuildableName = "GeminiKeyboardPortTests.xctest"
+               BlueprintName = "GeminiKeyboardPortTests"
                ReferencedContainer = "container:GeminiVoiceKeyboard.xcodeproj">
             </BuildableReference>
          </TestableReference>

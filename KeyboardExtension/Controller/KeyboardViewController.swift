@@ -31,7 +31,6 @@ final class KeyboardViewController: UIInputViewController, UIInputViewAudioFeedb
   var pollingTimer: Timer?
   var mode: DictationMode = .idle
   var keyboardIsVisible = false
-  var keyboardState = KeyboardInteractionState()
 
   var activeRequestID: String?
   var activeDocumentIdentifier: UUID?
@@ -58,6 +57,7 @@ final class KeyboardViewController: UIInputViewController, UIInputViewAudioFeedb
 
   let rootStack = UIStackView()
   let typingStack = UIStackView()
+  let keyboardSurface = KeyboardSurfaceView()
   let recordingPanel = UIView()
   let waveformView = LiveWaveformView()
   let recordingTitleLabel = UILabel()
@@ -71,13 +71,6 @@ final class KeyboardViewController: UIInputViewController, UIInputViewAudioFeedb
   let translateButton = KeyboardButton(type: .system)
   let cancelButton = KeyboardButton(type: .system)
   let insertLatestButton = KeyboardButton(type: .system)
-  let globeButton = KeyboardButton(type: .system)
-  let shiftButton = KeyboardButton(type: .system)
-  let pageButton = KeyboardButton(type: .system)
-  let deleteButton = KeyboardButton(type: .system)
-  var letterButtons: [KeyboardButton] = []
-  let keyPreview = KeyPreviewView()
-  var deleteRepeatTimer: Timer?
 
   var enableInputClicksWhenVisible: Bool { true }
 
@@ -88,11 +81,13 @@ final class KeyboardViewController: UIInputViewController, UIInputViewAudioFeedb
       forKey: LocalKey.consumedResultSequence
     )
     restoreTrackedRequest()
+    keyboardSurface.delegate = self
     buildInterface()
   }
 
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
+    syncKeyboardSurfaceContext()
     updateAutomaticCapitalization()
   }
 
@@ -121,13 +116,12 @@ final class KeyboardViewController: UIInputViewController, UIInputViewAudioFeedb
     processingIndicator.stopAnimating()
     pollingTimer?.invalidate()
     pollingTimer = nil
-    stopDeleteRepeat()
-    keyPreview.hide()
+    keyboardSurface.resetTransientState()
   }
 
   override func viewWillLayoutSubviews() {
     super.viewWillLayoutSubviews()
-    globeButton.isHidden = !needsInputModeSwitchKey
+    syncKeyboardSurfaceContext()
     updateKeyboardHeight()
   }
 
@@ -142,24 +136,13 @@ final class KeyboardViewController: UIInputViewController, UIInputViewAudioFeedb
       : UIColor(red: 0.82, green: 0.84, blue: 0.87, alpha: 1)
   }
 
-  static let letterKeyBackgroundColor = UIColor { traits in
-    traits.userInterfaceStyle == .dark
-      ? UIColor(red: 0.39, green: 0.40, blue: 0.43, alpha: 1)
-      : .white
-  }
-
-  static let systemKeyBackgroundColor = UIColor { traits in
-    traits.userInterfaceStyle == .dark
-      ? UIColor(red: 0.24, green: 0.25, blue: 0.28, alpha: 1)
-      : UIColor(red: 0.67, green: 0.70, blue: 0.74, alpha: 1)
-  }
-
   static let keyForegroundColor = UIColor { traits in
     traits.userInterfaceStyle == .dark ? .white : .black
   }
 
   override func textDidChange(_ textInput: UITextInput?) {
     super.textDidChange(textInput)
+    syncKeyboardSurfaceContext()
     updateAutomaticCapitalization()
     // Host apps can replace the text proxy just after the keyboard appears.
     // Restart the short settle window so the insertion anchor is captured
@@ -194,7 +177,6 @@ final class KeyboardViewController: UIInputViewController, UIInputViewAudioFeedb
   }
 
   func updateAutomaticCapitalization() {
-    guard keyboardState.page == .letters else { return }
     let context = textDocumentProxy.documentContextBeforeInput ?? ""
     let requested: KeyboardCapitalization
 
@@ -215,10 +197,23 @@ final class KeyboardViewController: UIInputViewController, UIInputViewAudioFeedb
       requested = .lowercase
     }
 
-    let previous = keyboardState.capitalization
-    keyboardState.applyAutomaticCapitalization(requested)
-    if keyboardState.capitalization != previous {
-      updateShiftAppearance()
+    keyboardSurface.applyAutomaticCapitalization(requested)
+  }
+
+  func syncKeyboardSurfaceContext() {
+    let inputKind: KeyboardInputKind
+    switch textDocumentProxy.keyboardType {
+    case .emailAddress:
+      inputKind = .email
+    case .URL, .webSearch:
+      inputKind = .url
+    default:
+      inputKind = .standard
     }
+    keyboardSurface.updateInputContext(
+      kind: inputKind,
+      returnKeyType: textDocumentProxy.returnKeyType ?? .default,
+      needsInputModeSwitchKey: needsInputModeSwitchKey
+    )
   }
 }

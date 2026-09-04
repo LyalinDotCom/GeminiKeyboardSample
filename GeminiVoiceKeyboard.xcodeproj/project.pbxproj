@@ -10,6 +10,7 @@
 		06A88338C04E108AE592D398 /* KeyboardButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A0D75FEE4B321A402DA8F1 /* KeyboardButton.swift */; };
 		0706EF32CAF90E9985C92B32 /* RelayController+HostReturn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07552F40DFDCB06AC84529FC /* RelayController+HostReturn.swift */; };
 		0959ACB53E242A30163D6565 /* GeminiTranscriptionClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A073542623364DA480481F /* GeminiTranscriptionClient.swift */; };
+		0A600D8984429D84E6205679 /* KeyboardKeyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9142A58C4F35B6162C6843 /* KeyboardKeyButton.swift */; };
 		0A6DE82124688F8994004657 /* GeminiVoiceUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0E0C9BA8AE993B68B0614F /* GeminiVoiceUITests.swift */; };
 		14220264EF82179CA97DCE9F /* GeminiLiveTimeout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA5A02DE7258AB55AE0A9EE /* GeminiLiveTimeout.swift */; };
 		1660D2E256AB1D071098B258 /* RelayController+Recovery.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34EF166AC4AD9AC34F8850A /* RelayController+Recovery.swift */; };
@@ -18,7 +19,9 @@
 		1994CF4FCC1139D4466E1264 /* AudioCaptureModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5348BD2E1D3D19A0618490E7 /* AudioCaptureModels.swift */; };
 		19DAF9A48A950CF8C92D6588 /* ContentView+History.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DAC3B3F68D1B41A91AA23F /* ContentView+History.swift */; };
 		1A2ECA2E8EBE9FD6354BB9B5 /* TranscriptHistoryStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F33BE9524E31BF2A2841B89 /* TranscriptHistoryStoreTests.swift */; };
+		1ABB9C722454CB3E74EE3C49 /* KeyboardCalloutViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B39CF678CDA4DBF2AE5D845 /* KeyboardCalloutViews.swift */; };
 		1DC1F03382C6A4D9169EA484 /* GeminiInteractionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC7D803FA19525B70196B48 /* GeminiInteractionResponse.swift */; };
+		1E9DEBAE5FB017CCA7806BEA /* KeyboardKeyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9142A58C4F35B6162C6843 /* KeyboardKeyButton.swift */; };
 		1EE6A965DDE886E7F85B664A /* KeyboardViewController+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C77C839F0D645358BB6B33 /* KeyboardViewController+Layout.swift */; };
 		202BD6CC3AA0E20F442A2B47 /* RelayLaunchRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C3A485089857649EBB01DA /* RelayLaunchRequest.swift */; };
 		20A81F680D4F00DD010C4230 /* RelayTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A597CC831BEEA852803C28 /* RelayTypes.swift */; };
@@ -35,6 +38,7 @@
 		2FA7FD874B40AA4A779C023F /* StopVoiceRelayIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC7E9671EF45E2B5D397122 /* StopVoiceRelayIntent.swift */; };
 		3130386E5EEA63F261BCA87D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35B02755FD9C1A037F66B743 /* Assets.xcassets */; };
 		31EB32FD752305E5D4B55FCF /* StopVoiceRelayIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC7E9671EF45E2B5D397122 /* StopVoiceRelayIntent.swift */; };
+		32532443DC33A8F3628847BB /* KeyboardInteractionState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CCAC79AAEBEC786A0F8953 /* KeyboardInteractionState.swift */; };
 		36768458F3847799675146EB /* VoiceRelayLiveActivityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC091768A6E8536E20B8091F /* VoiceRelayLiveActivityController.swift */; };
 		373DE81DDD5D158E0DA7DFD9 /* RelayTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A597CC831BEEA852803C28 /* RelayTypes.swift */; };
 		4320D50A6BDCB7220B88AAA3 /* RelayController+OCR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF13AF39415C9D0EDA58A84 /* RelayController+OCR.swift */; };
@@ -56,12 +60,16 @@
 		6ACE7BB879A4FC5EE8CFD17A /* GeminiLiveSpeechSessionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3106A978525154EE1080C79 /* GeminiLiveSpeechSessionTests.swift */; };
 		70EFD71F8D86397F2B923141 /* TranslationLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30AEB805022D71EC1FD79A2B /* TranslationLanguage.swift */; };
 		71B2A414304576AB605CC2D3 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = F0C6AEEF1CB027B40420FAEE /* PrivacyInfo.xcprivacy */; };
+		725D59FC398BA15595E09D6B /* KeyboardSurfaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46EC01E758B6BBB1DEC4D954 /* KeyboardSurfaceView.swift */; };
 		7834C07DE1942420E7156AB4 /* GeminiLiveSpeechSession+Streaming.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5480A832102148D9F6C24F /* GeminiLiveSpeechSession+Streaming.swift */; };
+		7C6FE6F061197AFCD0888AF7 /* KeyboardSurfaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46EC01E758B6BBB1DEC4D954 /* KeyboardSurfaceView.swift */; };
 		7FF592C094D13400EA77EB8E /* SharedRelayStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B716477C42202CF920B11E /* SharedRelayStore.swift */; };
 		83D66E80028614131A8907D5 /* KeyboardViewController+Typing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394282E08F15AFB08124AE79 /* KeyboardViewController+Typing.swift */; };
 		84026D55C74CB60A0DB64C9B /* TranslationLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30AEB805022D71EC1FD79A2B /* TranslationLanguage.swift */; };
 		84E2D655AE37D2F23C7D6999 /* RecoverableRecordingStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D17A940AC709C1F0AC15C3E /* RecoverableRecordingStore.swift */; };
 		8A76A12824DE24F3349BA19D /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 14869E8F5999AFBA63084B65 /* PrivacyInfo.xcprivacy */; };
+		8B03BB065EF24BDFA62DD024 /* KeyboardSurfaceViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF5BE164F6DB060ADB1112A /* KeyboardSurfaceViewTests.swift */; };
+		8BE7542E59FD1A57C4E1FB74 /* KeyboardCalloutViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B39CF678CDA4DBF2AE5D845 /* KeyboardCalloutViews.swift */; };
 		8CE278F2EA4B5C71FA7B9E42 /* RelayTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A597CC831BEEA852803C28 /* RelayTypes.swift */; };
 		8D9DBE174C91EC340FCF5CFC /* KeyboardViewController+Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3529AD9B37CFB8CFABE4E76D /* KeyboardViewController+Persistence.swift */; };
 		8DC4C0C341787E9B3E7EE086 /* RelayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF9B2A016BB6800E083F2E7 /* RelayController.swift */; };
@@ -79,7 +87,7 @@
 		B332608D2ED0DDBDD2271C42 /* KeyboardViewController+Presentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E89338D22B8EE0381E6035 /* KeyboardViewController+Presentation.swift */; };
 		B3E1D728072C82E06FE0CB2D /* VoiceRelayActivityAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDA879BC09C4F172908B1E5 /* VoiceRelayActivityAttributes.swift */; };
 		B462998FF875827E666758F2 /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9B051804088502709840CC /* AppConfiguration.swift */; };
-		B58A72D697F9FA8379D962F7 /* KeyPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D718922C9413CE5924CCA90 /* KeyPreviewView.swift */; };
+		BD5CD6D4562555056E3E178D /* KeyboardViewController+KeyboardSurface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA97AFCAF831002B4EA1ADC /* KeyboardViewController+KeyboardSurface.swift */; };
 		BD98041F610C4009A953E7F0 /* RelayControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980DDDCE46751286209E986F /* RelayControllerTests.swift */; };
 		BE9F03003BD91B65231F177F /* GeminiVoiceApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF6BC1062BAA9732BD376FB /* GeminiVoiceApp.swift */; };
 		C012364971C75BE2C27F5155 /* GeminiVoiceActivity.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = D81E7EB20CB02B75271EDEA0 /* GeminiVoiceActivity.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -160,6 +168,7 @@
 		1489845C6D1C4142566E2B12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		1D3D9798C108491981F73211 /* RelayController+BackgroundTasks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RelayController+BackgroundTasks.swift"; sourceTree = "<group>"; };
 		1DF13AF39415C9D0EDA58A84 /* RelayController+OCR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RelayController+OCR.swift"; sourceTree = "<group>"; };
+		1FA97AFCAF831002B4EA1ADC /* KeyboardViewController+KeyboardSurface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KeyboardViewController+KeyboardSurface.swift"; sourceTree = "<group>"; };
 		25C940284BA8B268E2282F2C /* AudioCaptureEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioCaptureEngine.swift; sourceTree = "<group>"; };
 		26DAC3B3F68D1B41A91AA23F /* ContentView+History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ContentView+History.swift"; sourceTree = "<group>"; };
 		2762D855CEB7A1A0BFB19D5C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -173,8 +182,10 @@
 		35B02755FD9C1A037F66B743 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		394282E08F15AFB08124AE79 /* KeyboardViewController+Typing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KeyboardViewController+Typing.swift"; sourceTree = "<group>"; };
 		3B23507746C5D5329E475B31 /* GeminiLiveSpeechSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeminiLiveSpeechSession.swift; sourceTree = "<group>"; };
+		3B39CF678CDA4DBF2AE5D845 /* KeyboardCalloutViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardCalloutViews.swift; sourceTree = "<group>"; };
 		3CDD4F40C198FC026E4D39A0 /* KeyboardViewController+DictationActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KeyboardViewController+DictationActions.swift"; sourceTree = "<group>"; };
 		3F1517E25DE9CE5F392E5CEB /* ContentView+Setup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ContentView+Setup.swift"; sourceTree = "<group>"; };
+		46EC01E758B6BBB1DEC4D954 /* KeyboardSurfaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardSurfaceView.swift; sourceTree = "<group>"; };
 		4A5B4D2C79612F995D04B10C /* GeminiVoiceActivity.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GeminiVoiceActivity.entitlements; sourceTree = "<group>"; };
 		4A69F7221DF51EF0C0626206 /* GeminiTranscriptionClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeminiTranscriptionClientTests.swift; sourceTree = "<group>"; };
 		4BA54D2F91F81DB6ABCFDB8A /* TranscriptFormatterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranscriptFormatterTests.swift; sourceTree = "<group>"; };
@@ -206,7 +217,6 @@
 		95BD5099BCB9A27DEA703E94 /* OpenGeminiVoiceIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenGeminiVoiceIntent.swift; sourceTree = "<group>"; };
 		980DDDCE46751286209E986F /* RelayControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelayControllerTests.swift; sourceTree = "<group>"; };
 		9A9B051804088502709840CC /* AppConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfiguration.swift; sourceTree = "<group>"; };
-		9D718922C9413CE5924CCA90 /* KeyPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyPreviewView.swift; sourceTree = "<group>"; };
 		9DD822CD3AB5043CBD3ECCC3 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		A2918A4EB5F8CC895CFE0984 /* AudioCaptureEngine+Streaming.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AudioCaptureEngine+Streaming.swift"; sourceTree = "<group>"; };
 		A96C61A063F34D4A303E9EBD /* RelayProtocolTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelayProtocolTests.swift; sourceTree = "<group>"; };
@@ -220,10 +230,13 @@
 		C34EF166AC4AD9AC34F8850A /* RelayController+Recovery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RelayController+Recovery.swift"; sourceTree = "<group>"; };
 		C882A84573B4EE52BEE17F84 /* RelayController+Publishing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RelayController+Publishing.swift"; sourceTree = "<group>"; };
 		C8B964B5303D942293FC59EC /* ContentView+Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ContentView+Settings.swift"; sourceTree = "<group>"; };
+		CFB613349CD78D67295FBB67 /* GeminiKeyboardPortTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = GeminiKeyboardPortTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0C8E4A993051E0D221E8FAC /* AudioCaptureEngine+Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AudioCaptureEngine+Session.swift"; sourceTree = "<group>"; };
 		D81E7EB20CB02B75271EDEA0 /* GeminiVoiceActivity.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = GeminiVoiceActivity.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBF177D8412EF5443867BE5C /* GeminiVoiceActivityWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeminiVoiceActivityWidget.swift; sourceTree = "<group>"; };
 		DCC7D803FA19525B70196B48 /* GeminiInteractionResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeminiInteractionResponse.swift; sourceTree = "<group>"; };
+		DD9142A58C4F35B6162C6843 /* KeyboardKeyButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardKeyButton.swift; sourceTree = "<group>"; };
+		DDF5BE164F6DB060ADB1112A /* KeyboardSurfaceViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardSurfaceViewTests.swift; sourceTree = "<group>"; };
 		DF4E290C928BA1CF8DA16B94 /* RelayController+Dictation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RelayController+Dictation.swift"; sourceTree = "<group>"; };
 		DF5E6E8C47A1E4CB4406CA73 /* AudioCaptureEngine+Recording.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AudioCaptureEngine+Recording.swift"; sourceTree = "<group>"; };
 		E2B716477C42202CF920B11E /* SharedRelayStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedRelayStore.swift; sourceTree = "<group>"; };
@@ -255,6 +268,7 @@
 				14869E8F5999AFBA63084B65 /* PrivacyInfo.xcprivacy */,
 				4FE09C7700442C964352D9B0 /* Components */,
 				3FF668EBA73A424AA057648B /* Controller */,
+				8378E90F13EA96AFD7EA43F5 /* KeyboardKitPort */,
 			);
 			path = KeyboardExtension;
 			sourceTree = "<group>";
@@ -276,6 +290,7 @@
 				B4897A394E6BE89C605C93AA /* KeyboardViewController+ContainingAppLaunch.swift */,
 				3CDD4F40C198FC026E4D39A0 /* KeyboardViewController+DictationActions.swift */,
 				04D13B064CE317C7AABCD1E9 /* KeyboardViewController+HostResolution.swift */,
+				1FA97AFCAF831002B4EA1ADC /* KeyboardViewController+KeyboardSurface.swift */,
 				E2C77C839F0D645358BB6B33 /* KeyboardViewController+Layout.swift */,
 				3529AD9B37CFB8CFABE4E76D /* KeyboardViewController+Persistence.swift */,
 				6002C70FC5446375D6536280 /* KeyboardViewController+PersonalHostLookup.swift */,
@@ -289,6 +304,7 @@
 		499391C8EDE58B69B118E63F /* Products */ = {
 			isa = PBXGroup;
 			children = (
+				CFB613349CD78D67295FBB67 /* GeminiKeyboardPortTests.xctest */,
 				E8BA880A71D5E1D69625FE56 /* GeminiVoice.app */,
 				D81E7EB20CB02B75271EDEA0 /* GeminiVoiceActivity.appex */,
 				5F06A35D82716D9FEDD8B47A /* GeminiVoiceKeyboard.appex */,
@@ -313,7 +329,6 @@
 			children = (
 				08CC85B83972CB81AE5E19B7 /* KeyboardBrandMarkView.swift */,
 				11A0D75FEE4B321A402DA8F1 /* KeyboardButton.swift */,
-				9D718922C9413CE5924CCA90 /* KeyPreviewView.swift */,
 				2C646C5D05D8DE61511D26F3 /* LiveWaveformView.swift */,
 			);
 			path = Components;
@@ -372,6 +387,7 @@
 				DF969398151B090DAF31B03D /* App */,
 				5E0CA288F659055F7062D701 /* Config */,
 				20886B8DBBE8AC11AACEA5BF /* KeyboardExtension */,
+				AC9E1632CF5798D9D50A8212 /* KeyboardPortTests */,
 				C3099AA6A5F0F5066956E49A /* LiveActivityExtension */,
 				8CC1C86D6D5DE9B63242E309 /* LiveActivityShared */,
 				5924C8C58185FC046B0E4893 /* Resources */,
@@ -380,6 +396,16 @@
 				9FE8D1F1B21A325A3FDA2533 /* UITests */,
 				499391C8EDE58B69B118E63F /* Products */,
 			);
+			sourceTree = "<group>";
+		};
+		8378E90F13EA96AFD7EA43F5 /* KeyboardKitPort */ = {
+			isa = PBXGroup;
+			children = (
+				3B39CF678CDA4DBF2AE5D845 /* KeyboardCalloutViews.swift */,
+				DD9142A58C4F35B6162C6843 /* KeyboardKeyButton.swift */,
+				46EC01E758B6BBB1DEC4D954 /* KeyboardSurfaceView.swift */,
+			);
+			path = KeyboardKitPort;
 			sourceTree = "<group>";
 		};
 		8A6A42B7345A876884187DDD /* Shared */ = {
@@ -454,6 +480,14 @@
 				5348BD2E1D3D19A0618490E7 /* AudioCaptureModels.swift */,
 			);
 			path = Audio;
+			sourceTree = "<group>";
+		};
+		AC9E1632CF5798D9D50A8212 /* KeyboardPortTests */ = {
+			isa = PBXGroup;
+			children = (
+				DDF5BE164F6DB060ADB1112A /* KeyboardSurfaceViewTests.swift */,
+			);
+			path = KeyboardPortTests;
 			sourceTree = "<group>";
 		};
 		C3099AA6A5F0F5066956E49A /* LiveActivityExtension */ = {
@@ -615,6 +649,23 @@
 			productReference = E8BA880A71D5E1D69625FE56 /* GeminiVoice.app */;
 			productType = "com.apple.product-type.application";
 		};
+		DDB96F8FEA06CD79C7CD2EE7 /* GeminiKeyboardPortTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 487A913D04D0097F3CCA2F84 /* Build configuration list for PBXNativeTarget "GeminiKeyboardPortTests" */;
+			buildPhases = (
+				52FDD1A8031B6B5E3DA5334C /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GeminiKeyboardPortTests;
+			packageProductDependencies = (
+			);
+			productName = GeminiKeyboardPortTests;
+			productReference = CFB613349CD78D67295FBB67 /* GeminiKeyboardPortTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -643,6 +694,9 @@
 						DevelopmentTeam = "";
 						ProvisioningStyle = Automatic;
 					};
+					DDB96F8FEA06CD79C7CD2EE7 = {
+						ProvisioningStyle = Automatic;
+					};
 				};
 			};
 			buildConfigurationList = 4F5C5E5BD2ADC169D6B497ED /* Build configuration list for PBXProject "GeminiVoiceKeyboard" */;
@@ -664,6 +718,7 @@
 				1F941C52C36A12CD6AA0FABE /* GeminiVoiceActivity */,
 				783E0DBDB08A86B2BCF027D9 /* GeminiVoiceTests */,
 				3CDBB14042DE64B20DC777EF /* GeminiVoiceUITests */,
+				DDB96F8FEA06CD79C7CD2EE7 /* GeminiKeyboardPortTests */,
 			);
 		};
 /* End PBXProject section */
@@ -764,17 +819,32 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		52FDD1A8031B6B5E3DA5334C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1ABB9C722454CB3E74EE3C49 /* KeyboardCalloutViews.swift in Sources */,
+				32532443DC33A8F3628847BB /* KeyboardInteractionState.swift in Sources */,
+				1E9DEBAE5FB017CCA7806BEA /* KeyboardKeyButton.swift in Sources */,
+				7C6FE6F061197AFCD0888AF7 /* KeyboardSurfaceView.swift in Sources */,
+				8B03BB065EF24BDFA62DD024 /* KeyboardSurfaceViewTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		72D186A498D9E1D8ED830C4B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B58A72D697F9FA8379D962F7 /* KeyPreviewView.swift in Sources */,
 				ABF62447226B29141944DBB1 /* KeyboardBrandMarkView.swift in Sources */,
 				06A88338C04E108AE592D398 /* KeyboardButton.swift in Sources */,
+				8BE7542E59FD1A57C4E1FB74 /* KeyboardCalloutViews.swift in Sources */,
 				F14471C0AB87DBBE81EB24FE /* KeyboardInteractionState.swift in Sources */,
+				0A600D8984429D84E6205679 /* KeyboardKeyButton.swift in Sources */,
+				725D59FC398BA15595E09D6B /* KeyboardSurfaceView.swift in Sources */,
 				51118903A0E0C269A9ED99C0 /* KeyboardViewController+ContainingAppLaunch.swift in Sources */,
 				2EF4D0C8EB36A02DC604D4AA /* KeyboardViewController+DictationActions.swift in Sources */,
 				D5334AF2EDD40B29EE08854B /* KeyboardViewController+HostResolution.swift in Sources */,
+				BD5CD6D4562555056E3E178D /* KeyboardViewController+KeyboardSurface.swift in Sources */,
 				1EE6A965DDE886E7F85B664A /* KeyboardViewController+Layout.swift in Sources */,
 				8D9DBE174C91EC340FCF5CFC /* KeyboardViewController+Persistence.swift in Sources */,
 				2CF3658BCD55F397F97CF714 /* KeyboardViewController+PersonalHostLookup.swift in Sources */,
@@ -881,6 +951,23 @@
 			};
 			name = Release;
 		};
+		0708499A44E3CCE80E7ED985 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGNING_ALLOWED = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.GeminiKeyboardPortTests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
 		39B6D96A9E7DD1A2DDCEA05B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C21AF0438E0898682839FE2E /* Debug.xcconfig */;
@@ -961,6 +1048,23 @@
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GeminiVoice.app/GeminiVoice";
 			};
 			name = Debug;
+		};
+		7F752AC408F57245CC7DA936 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGNING_ALLOWED = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.GeminiKeyboardPortTests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
 		};
 		8475CC999024D7E67BDB6EF2 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -1180,6 +1284,15 @@
 			buildConfigurations = (
 				04F64B09490FFF325525F1E4 /* Debug */,
 				8475CC999024D7E67BDB6EF2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		487A913D04D0097F3CCA2F84 /* Build configuration list for PBXNativeTarget "GeminiKeyboardPortTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0708499A44E3CCE80E7ED985 /* Debug */,
+				7F752AC408F57245CC7DA936 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;

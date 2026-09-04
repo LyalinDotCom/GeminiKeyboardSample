@@ -3,23 +3,6 @@ import Darwin
 import UIKit
 
 extension KeyboardViewController {
-  @objc func characterTouchBegan(_ sender: KeyboardButton) {
-    guard let title = sender.configuration?.title, title.count == 1 else { return }
-    keyPreview.show(text: title, above: sender, in: view)
-  }
-
-  @objc func characterTouchEnded() {
-    keyPreview.hide()
-  }
-
-  func playKeyFeedback() {
-    UIDevice.current.playInputClick()
-  }
-
-  @objc func globeTouchDown() {
-    playKeyFeedback()
-  }
-
   @objc func microphoneTapped() {
     handleDictationTap(action: .transcribe)
   }

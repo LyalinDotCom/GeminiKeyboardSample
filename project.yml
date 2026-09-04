@@ -125,6 +125,19 @@ targets:
     dependencies:
       - target: GeminiVoice
 
+  GeminiKeyboardPortTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - path: KeyboardPortTests
+      - path: KeyboardExtension/KeyboardKitPort
+      - path: Shared/Keyboard
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.example.GeminiKeyboardPortTests
+        GENERATE_INFOPLIST_FILE: YES
+        CODE_SIGNING_ALLOWED: NO
+
 schemes:
   GeminiVoice:
     build:
@@ -134,8 +147,10 @@ schemes:
         GeminiVoiceActivity: all
         GeminiVoiceTests: [test]
         GeminiVoiceUITests: [test]
+        GeminiKeyboardPortTests: [test]
     test:
       gatherCoverageData: true
       targets:
         - GeminiVoiceTests
         - GeminiVoiceUITests
+        - GeminiKeyboardPortTests

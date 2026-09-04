@@ -130,6 +130,8 @@ A response is accepted only when `status` is `completed`; partial text from an i
 
 Apple does not give custom keyboard extensions microphone access, even with Full Access. The containing app therefore owns `AVAudioEngine` and acts as a microphone relay; the keyboard only sends authenticated commands and inserts a matching result. Getting that to feel like a native dictation key took a lot of trial and error. This section is the map.
 
+The ordinary typing surface is a small, project-local port of selected KeyboardKit 9.9.1 concepts. It provides adaptive letter/number/symbol layouts, key previews and alternates, repeating delete, spacebar cursor movement, and email/URL-aware keys without linking, downloading, or licensing a framework at runtime. See [`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md) for its MIT attribution.
+
 ```text
 Custom keyboard process
   │  start / finish / cancel + request ID
@@ -210,7 +212,7 @@ Run the complete simulator suite:
 ./Scripts/test.sh
 ```
 
-The unit tests cover the Live protocol against a mock socket, the batch client against a mock URL session, the relay store's ordering and claim rules, recovery and history persistence, and the relay controller's OCR and handoff paths. Microphone capture is simulator-unavailable by design.
+The unit tests cover the local keyboard engine, the Live protocol against a mock socket, the batch client against a mock URL session, the relay store's ordering and claim rules, recovery and history persistence, and the relay controller's OCR and handoff paths. Microphone capture is simulator-unavailable by design.
 
 Deploy a signed Debug build to an available paired iPhone:
 
@@ -252,4 +254,4 @@ This repository is provided as an unsupported, read-only sample. There is no sup
 
 ## License
 
-Licensed under the [Apache License 2.0](LICENSE). You may use, modify, and redistribute the sample subject to that license.
+Licensed under the [Apache License 2.0](LICENSE). You may use, modify, and redistribute the sample subject to that license. Portions of the keyboard typing surface are adapted from MIT-licensed KeyboardKit 9.9.1; see [`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md).
