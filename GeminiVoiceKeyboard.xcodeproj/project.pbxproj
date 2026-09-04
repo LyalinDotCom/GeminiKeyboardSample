@@ -1,0 +1,1235 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		06A88338C04E108AE592D398 /* KeyboardButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A0D75FEE4B321A402DA8F1 /* KeyboardButton.swift */; };
+		0706EF32CAF90E9985C92B32 /* RelayController+HostReturn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07552F40DFDCB06AC84529FC /* RelayController+HostReturn.swift */; };
+		0959ACB53E242A30163D6565 /* GeminiTranscriptionClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A073542623364DA480481F /* GeminiTranscriptionClient.swift */; };
+		0A6DE82124688F8994004657 /* GeminiVoiceUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0E0C9BA8AE993B68B0614F /* GeminiVoiceUITests.swift */; };
+		14220264EF82179CA97DCE9F /* GeminiLiveTimeout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA5A02DE7258AB55AE0A9EE /* GeminiLiveTimeout.swift */; };
+		1660D2E256AB1D071098B258 /* RelayController+Recovery.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34EF166AC4AD9AC34F8850A /* RelayController+Recovery.swift */; };
+		18E3E49F046203C1FF5A97AA /* GeminiVoiceActivityWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF177D8412EF5443867BE5C /* GeminiVoiceActivityWidget.swift */; };
+		1925B8CBE3B53B24F9500A85 /* KeyboardInteractionStateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9087936CFF75AC72E7C914E /* KeyboardInteractionStateTests.swift */; };
+		1994CF4FCC1139D4466E1264 /* AudioCaptureModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5348BD2E1D3D19A0618490E7 /* AudioCaptureModels.swift */; };
+		19DAF9A48A950CF8C92D6588 /* ContentView+History.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DAC3B3F68D1B41A91AA23F /* ContentView+History.swift */; };
+		1A2ECA2E8EBE9FD6354BB9B5 /* TranscriptHistoryStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F33BE9524E31BF2A2841B89 /* TranscriptHistoryStoreTests.swift */; };
+		1DC1F03382C6A4D9169EA484 /* GeminiInteractionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC7D803FA19525B70196B48 /* GeminiInteractionResponse.swift */; };
+		1EE6A965DDE886E7F85B664A /* KeyboardViewController+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C77C839F0D645358BB6B33 /* KeyboardViewController+Layout.swift */; };
+		202BD6CC3AA0E20F442A2B47 /* RelayLaunchRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C3A485089857649EBB01DA /* RelayLaunchRequest.swift */; };
+		20A81F680D4F00DD010C4230 /* RelayTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A597CC831BEEA852803C28 /* RelayTypes.swift */; };
+		20C7F112A04D95719FE7C67B /* AudioCaptureEngine+Streaming.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2918A4EB5F8CC895CFE0984 /* AudioCaptureEngine+Streaming.swift */; };
+		232C281C02E4EF8BB3B07F11 /* AudioCaptureEngine+Recording.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5E6E8C47A1E4CB4406CA73 /* AudioCaptureEngine+Recording.swift */; };
+		25356F5E39DE2C8BED4F1BBB /* RelayLaunchRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C3A485089857649EBB01DA /* RelayLaunchRequest.swift */; };
+		298F0D1448AD04FBA77D88F0 /* TranscriptHistoryStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4245DE46D0823765AC3B109 /* TranscriptHistoryStore.swift */; };
+		2B8D1D0AFA0157B9D7967BC3 /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1FCCD0B56EAABD034492D3 /* KeyboardViewController.swift */; };
+		2CF3658BCD55F397F97CF714 /* KeyboardViewController+PersonalHostLookup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6002C70FC5446375D6536280 /* KeyboardViewController+PersonalHostLookup.swift */; };
+		2DAFE637CA8D653A7A9B30CA /* RelayController+BackgroundTasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3D9798C108491981F73211 /* RelayController+BackgroundTasks.swift */; };
+		2E5C9B7970D3D4188C948F6F /* GeminiLiveTransport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315BE803EEBE607AEFAFC5C7 /* GeminiLiveTransport.swift */; };
+		2EE112758DA3F0F47B25BC78 /* TranscriptFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515B88484F85DA78A2A2FE7F /* TranscriptFormatter.swift */; };
+		2EF4D0C8EB36A02DC604D4AA /* KeyboardViewController+DictationActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CDD4F40C198FC026E4D39A0 /* KeyboardViewController+DictationActions.swift */; };
+		2FA7FD874B40AA4A779C023F /* StopVoiceRelayIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC7E9671EF45E2B5D397122 /* StopVoiceRelayIntent.swift */; };
+		3130386E5EEA63F261BCA87D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35B02755FD9C1A037F66B743 /* Assets.xcassets */; };
+		31EB32FD752305E5D4B55FCF /* StopVoiceRelayIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC7E9671EF45E2B5D397122 /* StopVoiceRelayIntent.swift */; };
+		36768458F3847799675146EB /* VoiceRelayLiveActivityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC091768A6E8536E20B8091F /* VoiceRelayLiveActivityController.swift */; };
+		373DE81DDD5D158E0DA7DFD9 /* RelayTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A597CC831BEEA852803C28 /* RelayTypes.swift */; };
+		4320D50A6BDCB7220B88AAA3 /* RelayController+OCR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF13AF39415C9D0EDA58A84 /* RelayController+OCR.swift */; };
+		453038DA606174909A237291 /* GeminiVoiceKeyboard.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 5F06A35D82716D9FEDD8B47A /* GeminiVoiceKeyboard.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		4B12F27AF4ACB6891BB745D9 /* GeminiCredentialStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DB2F68FE7A362E6384E9D5 /* GeminiCredentialStore.swift */; };
+		4CF2C2B52D84822E623CF4CE /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C87E25E9B8458D535AD9D6E /* ImagePicker.swift */; };
+		4DF54FE0C6E8917861CE5265 /* RelayController+Transcription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B69DDC8848364C1873C958 /* RelayController+Transcription.swift */; };
+		51118903A0E0C269A9ED99C0 /* KeyboardViewController+ContainingAppLaunch.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4897A394E6BE89C605C93AA /* KeyboardViewController+ContainingAppLaunch.swift */; };
+		54906E53BAED2B9255AC7F8A /* RelayProtocolTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96C61A063F34D4A303E9EBD /* RelayProtocolTests.swift */; };
+		5560D83BDFD9BB77285A9217 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2762D855CEB7A1A0BFB19D5C /* ContentView.swift */; };
+		5752C7AEC51337DBBE81D4C1 /* GeminiTranscriptionClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A69F7221DF51EF0C0626206 /* GeminiTranscriptionClientTests.swift */; };
+		5BBDB934FE633334950A0153 /* RecoverableRecordingStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FFA8B53B99AE2205394E300 /* RecoverableRecordingStoreTests.swift */; };
+		5CFEA1B4963E7536FEFD6E37 /* ContentView+Overview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A7C2DEE3F4764876B9AEF3 /* ContentView+Overview.swift */; };
+		5F644235A43748A906EDACE5 /* ContentView+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE5FADD865F082BE2ABD2A8 /* ContentView+Helpers.swift */; };
+		5FD2F450FB4AADB13FD0654E /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 106A836CF2F83094CF5445EF /* PrivacyInfo.xcprivacy */; };
+		600861AE60C73C0AA6997CBF /* RelayLaunchRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C3A485089857649EBB01DA /* RelayLaunchRequest.swift */; };
+		64E21E4C78698BD9882D7290 /* AudioCaptureEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C940284BA8B268E2282F2C /* AudioCaptureEngine.swift */; };
+		6969E24601BACC67482F8401 /* LiveWaveformView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C646C5D05D8DE61511D26F3 /* LiveWaveformView.swift */; };
+		6ACE7BB879A4FC5EE8CFD17A /* GeminiLiveSpeechSessionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3106A978525154EE1080C79 /* GeminiLiveSpeechSessionTests.swift */; };
+		70EFD71F8D86397F2B923141 /* TranslationLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30AEB805022D71EC1FD79A2B /* TranslationLanguage.swift */; };
+		71B2A414304576AB605CC2D3 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = F0C6AEEF1CB027B40420FAEE /* PrivacyInfo.xcprivacy */; };
+		7834C07DE1942420E7156AB4 /* GeminiLiveSpeechSession+Streaming.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5480A832102148D9F6C24F /* GeminiLiveSpeechSession+Streaming.swift */; };
+		7FF592C094D13400EA77EB8E /* SharedRelayStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B716477C42202CF920B11E /* SharedRelayStore.swift */; };
+		83D66E80028614131A8907D5 /* KeyboardViewController+Typing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394282E08F15AFB08124AE79 /* KeyboardViewController+Typing.swift */; };
+		84026D55C74CB60A0DB64C9B /* TranslationLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30AEB805022D71EC1FD79A2B /* TranslationLanguage.swift */; };
+		84E2D655AE37D2F23C7D6999 /* RecoverableRecordingStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D17A940AC709C1F0AC15C3E /* RecoverableRecordingStore.swift */; };
+		8A76A12824DE24F3349BA19D /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 14869E8F5999AFBA63084B65 /* PrivacyInfo.xcprivacy */; };
+		8CE278F2EA4B5C71FA7B9E42 /* RelayTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A597CC831BEEA852803C28 /* RelayTypes.swift */; };
+		8D9DBE174C91EC340FCF5CFC /* KeyboardViewController+Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3529AD9B37CFB8CFABE4E76D /* KeyboardViewController+Persistence.swift */; };
+		8DC4C0C341787E9B3E7EE086 /* RelayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF9B2A016BB6800E083F2E7 /* RelayController.swift */; };
+		8FF28C3F3448483DCE223BBD /* RelayController+Polling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E051B6D87D0726C9484AAC /* RelayController+Polling.swift */; };
+		9005FF50E485C9F295168809 /* GeminiLiveProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6563D6B887210A220C0FD72 /* GeminiLiveProtocol.swift */; };
+		9238DB518D9A23C4DEC2507F /* TranscriptFormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA54D2F91F81DB6ABCFDB8A /* TranscriptFormatterTests.swift */; };
+		959362742AD6E9340B45E54D /* AudioCaptureEngine+Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C8E4A993051E0D221E8FAC /* AudioCaptureEngine+Session.swift */; };
+		97B62DC86C92C06B7EB28C68 /* AudioCaptureEngineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58585FBDF200E12406B8CA17 /* AudioCaptureEngineTests.swift */; };
+		9F008710C5D30BB7A2CD6579 /* KeyboardInteractionState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CCAC79AAEBEC786A0F8953 /* KeyboardInteractionState.swift */; };
+		A7B9111AD0A39AA6C53DAAB0 /* TranscriptFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515B88484F85DA78A2A2FE7F /* TranscriptFormatter.swift */; };
+		ABF62447226B29141944DBB1 /* KeyboardBrandMarkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CC85B83972CB81AE5E19B7 /* KeyboardBrandMarkView.swift */; };
+		AEDA87A9DCB0E940549AA2DA /* ContentView+Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B964B5303D942293FC59EC /* ContentView+Settings.swift */; };
+		B156FC9060F167DC69FDDC48 /* RelayIdleShutdownPolicyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F0AED7C4B84B46EA898F5B4 /* RelayIdleShutdownPolicyTests.swift */; };
+		B2D1786F07AE74EE1C910462 /* OCRButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFADE514ADFB1739650FAB7 /* OCRButtonStyle.swift */; };
+		B332608D2ED0DDBDD2271C42 /* KeyboardViewController+Presentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E89338D22B8EE0381E6035 /* KeyboardViewController+Presentation.swift */; };
+		B3E1D728072C82E06FE0CB2D /* VoiceRelayActivityAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDA879BC09C4F172908B1E5 /* VoiceRelayActivityAttributes.swift */; };
+		B462998FF875827E666758F2 /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9B051804088502709840CC /* AppConfiguration.swift */; };
+		B58A72D697F9FA8379D962F7 /* KeyPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D718922C9413CE5924CCA90 /* KeyPreviewView.swift */; };
+		BD98041F610C4009A953E7F0 /* RelayControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980DDDCE46751286209E986F /* RelayControllerTests.swift */; };
+		BE9F03003BD91B65231F177F /* GeminiVoiceApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF6BC1062BAA9732BD376FB /* GeminiVoiceApp.swift */; };
+		C012364971C75BE2C27F5155 /* GeminiVoiceActivity.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = D81E7EB20CB02B75271EDEA0 /* GeminiVoiceActivity.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		CADE538F4B9B4377A8D17B22 /* SharedRelayStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B716477C42202CF920B11E /* SharedRelayStore.swift */; };
+		CF205EF65264F6571FD051FE /* RelayController+Dictation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4E290C928BA1CF8DA16B94 /* RelayController+Dictation.swift */; };
+		D3107FE59B6E88FA7F58DE07 /* SharedRelayStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B716477C42202CF920B11E /* SharedRelayStore.swift */; };
+		D401F40FE6847E8FDB1BE5F0 /* OpenGeminiVoiceIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BD5099BCB9A27DEA703E94 /* OpenGeminiVoiceIntent.swift */; };
+		D5334AF2EDD40B29EE08854B /* KeyboardViewController+HostResolution.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D13B064CE317C7AABCD1E9 /* KeyboardViewController+HostResolution.swift */; };
+		D9B404717D1738BCA42B9B57 /* GeminiLiveSpeechSession+Finalization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0E6AF30B8AAD07641C9153 /* GeminiLiveSpeechSession+Finalization.swift */; };
+		E25225D30E4365D7112B02BB /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 9DD822CD3AB5043CBD3ECCC3 /* README.md */; };
+		E277099D7728EB9155E9E615 /* KeyboardViewController+RelayState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083904E31DFB659C0AE41051 /* KeyboardViewController+RelayState.swift */; };
+		E8098EE993C666DC88181A07 /* ContentView+Handoff.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68BF8722DB584AEC8F816E86 /* ContentView+Handoff.swift */; };
+		EDAC8A96AC3BCF2650E46053 /* RelayController+Publishing.swift in Sources */ = {isa = PBXBuildFile; fileRef = C882A84573B4EE52BEE17F84 /* RelayController+Publishing.swift */; };
+		F14471C0AB87DBBE81EB24FE /* KeyboardInteractionState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CCAC79AAEBEC786A0F8953 /* KeyboardInteractionState.swift */; };
+		FA38DA1E2F7807BA8FD21BDA /* VoiceRelayActivityAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDA879BC09C4F172908B1E5 /* VoiceRelayActivityAttributes.swift */; };
+		FCB2F573ADEA91C8B120FE89 /* GeminiLiveSpeechSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B23507746C5D5329E475B31 /* GeminiLiveSpeechSession.swift */; };
+		FFF8A8BA3E805BF56933F995 /* ContentView+Setup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1517E25DE9CE5F392E5CEB /* ContentView+Setup.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4323EB0089F357952C911470 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D38FDFB873B4D1312129020F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1F941C52C36A12CD6AA0FABE;
+			remoteInfo = GeminiVoiceActivity;
+		};
+		5932F360C25A14731BAD6D4D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D38FDFB873B4D1312129020F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C17AFB129EF1AF599E1D351F;
+			remoteInfo = GeminiVoice;
+		};
+		CF21C4FA36B5E57A437C822B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D38FDFB873B4D1312129020F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C17AFB129EF1AF599E1D351F;
+			remoteInfo = GeminiVoice;
+		};
+		E048E28AE2AFB5C0E37BE442 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D38FDFB873B4D1312129020F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 85CCD170A2DC264CFB4CED27;
+			remoteInfo = GeminiVoiceKeyboard;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		360A3B38C501C4F81FD5094A /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				453038DA606174909A237291 /* GeminiVoiceKeyboard.appex in Embed Foundation Extensions */,
+				C012364971C75BE2C27F5155 /* GeminiVoiceActivity.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		04D13B064CE317C7AABCD1E9 /* KeyboardViewController+HostResolution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KeyboardViewController+HostResolution.swift"; sourceTree = "<group>"; };
+		05A7C2DEE3F4764876B9AEF3 /* ContentView+Overview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ContentView+Overview.swift"; sourceTree = "<group>"; };
+		05DB2F68FE7A362E6384E9D5 /* GeminiCredentialStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeminiCredentialStore.swift; sourceTree = "<group>"; };
+		07552F40DFDCB06AC84529FC /* RelayController+HostReturn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RelayController+HostReturn.swift"; sourceTree = "<group>"; };
+		083904E31DFB659C0AE41051 /* KeyboardViewController+RelayState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KeyboardViewController+RelayState.swift"; sourceTree = "<group>"; };
+		08CC85B83972CB81AE5E19B7 /* KeyboardBrandMarkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardBrandMarkView.swift; sourceTree = "<group>"; };
+		0F1FCCD0B56EAABD034492D3 /* KeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardViewController.swift; sourceTree = "<group>"; };
+		0FDA879BC09C4F172908B1E5 /* VoiceRelayActivityAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceRelayActivityAttributes.swift; sourceTree = "<group>"; };
+		106A836CF2F83094CF5445EF /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		11A0D75FEE4B321A402DA8F1 /* KeyboardButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardButton.swift; sourceTree = "<group>"; };
+		14869E8F5999AFBA63084B65 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		1489845C6D1C4142566E2B12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		1D3D9798C108491981F73211 /* RelayController+BackgroundTasks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RelayController+BackgroundTasks.swift"; sourceTree = "<group>"; };
+		1DF13AF39415C9D0EDA58A84 /* RelayController+OCR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RelayController+OCR.swift"; sourceTree = "<group>"; };
+		25C940284BA8B268E2282F2C /* AudioCaptureEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioCaptureEngine.swift; sourceTree = "<group>"; };
+		26DAC3B3F68D1B41A91AA23F /* ContentView+History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ContentView+History.swift"; sourceTree = "<group>"; };
+		2762D855CEB7A1A0BFB19D5C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		2C646C5D05D8DE61511D26F3 /* LiveWaveformView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveWaveformView.swift; sourceTree = "<group>"; };
+		2DE5FADD865F082BE2ABD2A8 /* ContentView+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ContentView+Helpers.swift"; sourceTree = "<group>"; };
+		2EC7E9671EF45E2B5D397122 /* StopVoiceRelayIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopVoiceRelayIntent.swift; sourceTree = "<group>"; };
+		2F0E6AF30B8AAD07641C9153 /* GeminiLiveSpeechSession+Finalization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GeminiLiveSpeechSession+Finalization.swift"; sourceTree = "<group>"; };
+		30AEB805022D71EC1FD79A2B /* TranslationLanguage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationLanguage.swift; sourceTree = "<group>"; };
+		315BE803EEBE607AEFAFC5C7 /* GeminiLiveTransport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeminiLiveTransport.swift; sourceTree = "<group>"; };
+		3529AD9B37CFB8CFABE4E76D /* KeyboardViewController+Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KeyboardViewController+Persistence.swift"; sourceTree = "<group>"; };
+		35B02755FD9C1A037F66B743 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		394282E08F15AFB08124AE79 /* KeyboardViewController+Typing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KeyboardViewController+Typing.swift"; sourceTree = "<group>"; };
+		3B23507746C5D5329E475B31 /* GeminiLiveSpeechSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeminiLiveSpeechSession.swift; sourceTree = "<group>"; };
+		3CDD4F40C198FC026E4D39A0 /* KeyboardViewController+DictationActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KeyboardViewController+DictationActions.swift"; sourceTree = "<group>"; };
+		3F1517E25DE9CE5F392E5CEB /* ContentView+Setup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ContentView+Setup.swift"; sourceTree = "<group>"; };
+		4A5B4D2C79612F995D04B10C /* GeminiVoiceActivity.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GeminiVoiceActivity.entitlements; sourceTree = "<group>"; };
+		4A69F7221DF51EF0C0626206 /* GeminiTranscriptionClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeminiTranscriptionClientTests.swift; sourceTree = "<group>"; };
+		4BA54D2F91F81DB6ABCFDB8A /* TranscriptFormatterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranscriptFormatterTests.swift; sourceTree = "<group>"; };
+		4DFADE514ADFB1739650FAB7 /* OCRButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OCRButtonStyle.swift; sourceTree = "<group>"; };
+		515B88484F85DA78A2A2FE7F /* TranscriptFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranscriptFormatter.swift; sourceTree = "<group>"; };
+		5348BD2E1D3D19A0618490E7 /* AudioCaptureModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioCaptureModels.swift; sourceTree = "<group>"; };
+		57CEA481BD7EB7B1C36FBE9A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		58585FBDF200E12406B8CA17 /* AudioCaptureEngineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioCaptureEngineTests.swift; sourceTree = "<group>"; };
+		5CF6BC1062BAA9732BD376FB /* GeminiVoiceApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeminiVoiceApp.swift; sourceTree = "<group>"; };
+		5F06A35D82716D9FEDD8B47A /* GeminiVoiceKeyboard.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = GeminiVoiceKeyboard.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		5FFA8B53B99AE2205394E300 /* RecoverableRecordingStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoverableRecordingStoreTests.swift; sourceTree = "<group>"; };
+		6002C70FC5446375D6536280 /* KeyboardViewController+PersonalHostLookup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KeyboardViewController+PersonalHostLookup.swift"; sourceTree = "<group>"; };
+		6161793133F1494AB847AFB6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		68BF8722DB584AEC8F816E86 /* ContentView+Handoff.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ContentView+Handoff.swift"; sourceTree = "<group>"; };
+		6B5480A832102148D9F6C24F /* GeminiLiveSpeechSession+Streaming.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GeminiLiveSpeechSession+Streaming.swift"; sourceTree = "<group>"; };
+		6D17A940AC709C1F0AC15C3E /* RecoverableRecordingStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoverableRecordingStore.swift; sourceTree = "<group>"; };
+		6F0AED7C4B84B46EA898F5B4 /* RelayIdleShutdownPolicyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelayIdleShutdownPolicyTests.swift; sourceTree = "<group>"; };
+		76E89338D22B8EE0381E6035 /* KeyboardViewController+Presentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KeyboardViewController+Presentation.swift"; sourceTree = "<group>"; };
+		7AA5A02DE7258AB55AE0A9EE /* GeminiLiveTimeout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeminiLiveTimeout.swift; sourceTree = "<group>"; };
+		7CD6ECA8CEA30AE0C4E21B82 /* GeminiVoiceKeyboard.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GeminiVoiceKeyboard.entitlements; sourceTree = "<group>"; };
+		7E0E0C9BA8AE993B68B0614F /* GeminiVoiceUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeminiVoiceUITests.swift; sourceTree = "<group>"; };
+		81B69DDC8848364C1873C958 /* RelayController+Transcription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RelayController+Transcription.swift"; sourceTree = "<group>"; };
+		8482805D944C1F8CA40E19D1 /* GeminiVoiceTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = GeminiVoiceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		86C3A485089857649EBB01DA /* RelayLaunchRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelayLaunchRequest.swift; sourceTree = "<group>"; };
+		88E051B6D87D0726C9484AAC /* RelayController+Polling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RelayController+Polling.swift"; sourceTree = "<group>"; };
+		8C87E25E9B8458D535AD9D6E /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		8F33BE9524E31BF2A2841B89 /* TranscriptHistoryStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranscriptHistoryStoreTests.swift; sourceTree = "<group>"; };
+		94A073542623364DA480481F /* GeminiTranscriptionClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeminiTranscriptionClient.swift; sourceTree = "<group>"; };
+		95BD5099BCB9A27DEA703E94 /* OpenGeminiVoiceIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenGeminiVoiceIntent.swift; sourceTree = "<group>"; };
+		980DDDCE46751286209E986F /* RelayControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelayControllerTests.swift; sourceTree = "<group>"; };
+		9A9B051804088502709840CC /* AppConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfiguration.swift; sourceTree = "<group>"; };
+		9D718922C9413CE5924CCA90 /* KeyPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyPreviewView.swift; sourceTree = "<group>"; };
+		9DD822CD3AB5043CBD3ECCC3 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		A2918A4EB5F8CC895CFE0984 /* AudioCaptureEngine+Streaming.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AudioCaptureEngine+Streaming.swift"; sourceTree = "<group>"; };
+		A96C61A063F34D4A303E9EBD /* RelayProtocolTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelayProtocolTests.swift; sourceTree = "<group>"; };
+		B0CCAC79AAEBEC786A0F8953 /* KeyboardInteractionState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardInteractionState.swift; sourceTree = "<group>"; };
+		B1A597CC831BEEA852803C28 /* RelayTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelayTypes.swift; sourceTree = "<group>"; };
+		B4897A394E6BE89C605C93AA /* KeyboardViewController+ContainingAppLaunch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KeyboardViewController+ContainingAppLaunch.swift"; sourceTree = "<group>"; };
+		BA74E262E74790491BF9D732 /* GeminiVoiceUITests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = GeminiVoiceUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BBF9B2A016BB6800E083F2E7 /* RelayController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelayController.swift; sourceTree = "<group>"; };
+		BFCFF6E321EE159937108176 /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
+		C21AF0438E0898682839FE2E /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
+		C34EF166AC4AD9AC34F8850A /* RelayController+Recovery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RelayController+Recovery.swift"; sourceTree = "<group>"; };
+		C882A84573B4EE52BEE17F84 /* RelayController+Publishing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RelayController+Publishing.swift"; sourceTree = "<group>"; };
+		C8B964B5303D942293FC59EC /* ContentView+Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ContentView+Settings.swift"; sourceTree = "<group>"; };
+		D0C8E4A993051E0D221E8FAC /* AudioCaptureEngine+Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AudioCaptureEngine+Session.swift"; sourceTree = "<group>"; };
+		D81E7EB20CB02B75271EDEA0 /* GeminiVoiceActivity.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = GeminiVoiceActivity.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		DBF177D8412EF5443867BE5C /* GeminiVoiceActivityWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeminiVoiceActivityWidget.swift; sourceTree = "<group>"; };
+		DCC7D803FA19525B70196B48 /* GeminiInteractionResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeminiInteractionResponse.swift; sourceTree = "<group>"; };
+		DF4E290C928BA1CF8DA16B94 /* RelayController+Dictation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RelayController+Dictation.swift"; sourceTree = "<group>"; };
+		DF5E6E8C47A1E4CB4406CA73 /* AudioCaptureEngine+Recording.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AudioCaptureEngine+Recording.swift"; sourceTree = "<group>"; };
+		E2B716477C42202CF920B11E /* SharedRelayStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedRelayStore.swift; sourceTree = "<group>"; };
+		E2C77C839F0D645358BB6B33 /* KeyboardViewController+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KeyboardViewController+Layout.swift"; sourceTree = "<group>"; };
+		E4245DE46D0823765AC3B109 /* TranscriptHistoryStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranscriptHistoryStore.swift; sourceTree = "<group>"; };
+		E8BA880A71D5E1D69625FE56 /* GeminiVoice.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = GeminiVoice.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E9087936CFF75AC72E7C914E /* KeyboardInteractionStateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardInteractionStateTests.swift; sourceTree = "<group>"; };
+		F0C6AEEF1CB027B40420FAEE /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		F3106A978525154EE1080C79 /* GeminiLiveSpeechSessionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeminiLiveSpeechSessionTests.swift; sourceTree = "<group>"; };
+		F6563D6B887210A220C0FD72 /* GeminiLiveProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeminiLiveProtocol.swift; sourceTree = "<group>"; };
+		FB52084C6DF98C436D792984 /* GeminiVoice.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GeminiVoice.entitlements; sourceTree = "<group>"; };
+		FC091768A6E8536E20B8091F /* VoiceRelayLiveActivityController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceRelayLiveActivityController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		0029BC5A579ABF464D5A7EE5 /* Keyboard */ = {
+			isa = PBXGroup;
+			children = (
+				B0CCAC79AAEBEC786A0F8953 /* KeyboardInteractionState.swift */,
+			);
+			path = Keyboard;
+			sourceTree = "<group>";
+		};
+		20886B8DBBE8AC11AACEA5BF /* KeyboardExtension */ = {
+			isa = PBXGroup;
+			children = (
+				7CD6ECA8CEA30AE0C4E21B82 /* GeminiVoiceKeyboard.entitlements */,
+				1489845C6D1C4142566E2B12 /* Info.plist */,
+				14869E8F5999AFBA63084B65 /* PrivacyInfo.xcprivacy */,
+				4FE09C7700442C964352D9B0 /* Components */,
+				3FF668EBA73A424AA057648B /* Controller */,
+			);
+			path = KeyboardExtension;
+			sourceTree = "<group>";
+		};
+		26B919888600642D5A2D3233 /* Gemini */ = {
+			isa = PBXGroup;
+			children = (
+				9DD822CD3AB5043CBD3ECCC3 /* README.md */,
+				C35813FAE085D99C925FB5F2 /* Batch */,
+				7DCCBC222EF62BF906DB559D /* Live */,
+			);
+			path = Gemini;
+			sourceTree = "<group>";
+		};
+		3FF668EBA73A424AA057648B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0F1FCCD0B56EAABD034492D3 /* KeyboardViewController.swift */,
+				B4897A394E6BE89C605C93AA /* KeyboardViewController+ContainingAppLaunch.swift */,
+				3CDD4F40C198FC026E4D39A0 /* KeyboardViewController+DictationActions.swift */,
+				04D13B064CE317C7AABCD1E9 /* KeyboardViewController+HostResolution.swift */,
+				E2C77C839F0D645358BB6B33 /* KeyboardViewController+Layout.swift */,
+				3529AD9B37CFB8CFABE4E76D /* KeyboardViewController+Persistence.swift */,
+				6002C70FC5446375D6536280 /* KeyboardViewController+PersonalHostLookup.swift */,
+				76E89338D22B8EE0381E6035 /* KeyboardViewController+Presentation.swift */,
+				083904E31DFB659C0AE41051 /* KeyboardViewController+RelayState.swift */,
+				394282E08F15AFB08124AE79 /* KeyboardViewController+Typing.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		499391C8EDE58B69B118E63F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E8BA880A71D5E1D69625FE56 /* GeminiVoice.app */,
+				D81E7EB20CB02B75271EDEA0 /* GeminiVoiceActivity.appex */,
+				5F06A35D82716D9FEDD8B47A /* GeminiVoiceKeyboard.appex */,
+				8482805D944C1F8CA40E19D1 /* GeminiVoiceTests.xctest */,
+				BA74E262E74790491BF9D732 /* GeminiVoiceUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4AA0C86420CC0CCC78829B05 /* Relay */ = {
+			isa = PBXGroup;
+			children = (
+				86C3A485089857649EBB01DA /* RelayLaunchRequest.swift */,
+				B1A597CC831BEEA852803C28 /* RelayTypes.swift */,
+				E2B716477C42202CF920B11E /* SharedRelayStore.swift */,
+			);
+			path = Relay;
+			sourceTree = "<group>";
+		};
+		4FE09C7700442C964352D9B0 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				08CC85B83972CB81AE5E19B7 /* KeyboardBrandMarkView.swift */,
+				11A0D75FEE4B321A402DA8F1 /* KeyboardButton.swift */,
+				9D718922C9413CE5924CCA90 /* KeyPreviewView.swift */,
+				2C646C5D05D8DE61511D26F3 /* LiveWaveformView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		526B341CB95943F682826ED1 /* Relay */ = {
+			isa = PBXGroup;
+			children = (
+				BBF9B2A016BB6800E083F2E7 /* RelayController.swift */,
+				1D3D9798C108491981F73211 /* RelayController+BackgroundTasks.swift */,
+				DF4E290C928BA1CF8DA16B94 /* RelayController+Dictation.swift */,
+				07552F40DFDCB06AC84529FC /* RelayController+HostReturn.swift */,
+				1DF13AF39415C9D0EDA58A84 /* RelayController+OCR.swift */,
+				88E051B6D87D0726C9484AAC /* RelayController+Polling.swift */,
+				C882A84573B4EE52BEE17F84 /* RelayController+Publishing.swift */,
+				C34EF166AC4AD9AC34F8850A /* RelayController+Recovery.swift */,
+				81B69DDC8848364C1873C958 /* RelayController+Transcription.swift */,
+				FC091768A6E8536E20B8091F /* VoiceRelayLiveActivityController.swift */,
+			);
+			path = Relay;
+			sourceTree = "<group>";
+		};
+		5924C8C58185FC046B0E4893 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				35B02755FD9C1A037F66B743 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		5E0CA288F659055F7062D701 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				C21AF0438E0898682839FE2E /* Debug.xcconfig */,
+				BFCFF6E321EE159937108176 /* Release.xcconfig */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		7DCCBC222EF62BF906DB559D /* Live */ = {
+			isa = PBXGroup;
+			children = (
+				F6563D6B887210A220C0FD72 /* GeminiLiveProtocol.swift */,
+				3B23507746C5D5329E475B31 /* GeminiLiveSpeechSession.swift */,
+				2F0E6AF30B8AAD07641C9153 /* GeminiLiveSpeechSession+Finalization.swift */,
+				6B5480A832102148D9F6C24F /* GeminiLiveSpeechSession+Streaming.swift */,
+				7AA5A02DE7258AB55AE0A9EE /* GeminiLiveTimeout.swift */,
+				315BE803EEBE607AEFAFC5C7 /* GeminiLiveTransport.swift */,
+			);
+			path = Live;
+			sourceTree = "<group>";
+		};
+		7E942C686DE068923FF927EA = {
+			isa = PBXGroup;
+			children = (
+				DF969398151B090DAF31B03D /* App */,
+				5E0CA288F659055F7062D701 /* Config */,
+				20886B8DBBE8AC11AACEA5BF /* KeyboardExtension */,
+				C3099AA6A5F0F5066956E49A /* LiveActivityExtension */,
+				8CC1C86D6D5DE9B63242E309 /* LiveActivityShared */,
+				5924C8C58185FC046B0E4893 /* Resources */,
+				8A6A42B7345A876884187DDD /* Shared */,
+				935D3F7A9B38ED6CA1853D38 /* Tests */,
+				9FE8D1F1B21A325A3FDA2533 /* UITests */,
+				499391C8EDE58B69B118E63F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8A6A42B7345A876884187DDD /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				A1AFC6E581375CB3A90A0EDB /* Gemini */,
+				0029BC5A579ABF464D5A7EE5 /* Keyboard */,
+				4AA0C86420CC0CCC78829B05 /* Relay */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		8CC1C86D6D5DE9B63242E309 /* LiveActivityShared */ = {
+			isa = PBXGroup;
+			children = (
+				2EC7E9671EF45E2B5D397122 /* StopVoiceRelayIntent.swift */,
+				0FDA879BC09C4F172908B1E5 /* VoiceRelayActivityAttributes.swift */,
+			);
+			path = LiveActivityShared;
+			sourceTree = "<group>";
+		};
+		935D3F7A9B38ED6CA1853D38 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				58585FBDF200E12406B8CA17 /* AudioCaptureEngineTests.swift */,
+				F3106A978525154EE1080C79 /* GeminiLiveSpeechSessionTests.swift */,
+				4A69F7221DF51EF0C0626206 /* GeminiTranscriptionClientTests.swift */,
+				E9087936CFF75AC72E7C914E /* KeyboardInteractionStateTests.swift */,
+				5FFA8B53B99AE2205394E300 /* RecoverableRecordingStoreTests.swift */,
+				980DDDCE46751286209E986F /* RelayControllerTests.swift */,
+				6F0AED7C4B84B46EA898F5B4 /* RelayIdleShutdownPolicyTests.swift */,
+				A96C61A063F34D4A303E9EBD /* RelayProtocolTests.swift */,
+				4BA54D2F91F81DB6ABCFDB8A /* TranscriptFormatterTests.swift */,
+				8F33BE9524E31BF2A2841B89 /* TranscriptHistoryStoreTests.swift */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		9DB03D4F96829BF30CC441FC /* Recovery */ = {
+			isa = PBXGroup;
+			children = (
+				6D17A940AC709C1F0AC15C3E /* RecoverableRecordingStore.swift */,
+				E4245DE46D0823765AC3B109 /* TranscriptHistoryStore.swift */,
+			);
+			path = Recovery;
+			sourceTree = "<group>";
+		};
+		9FE8D1F1B21A325A3FDA2533 /* UITests */ = {
+			isa = PBXGroup;
+			children = (
+				7E0E0C9BA8AE993B68B0614F /* GeminiVoiceUITests.swift */,
+			);
+			path = UITests;
+			sourceTree = "<group>";
+		};
+		A1AFC6E581375CB3A90A0EDB /* Gemini */ = {
+			isa = PBXGroup;
+			children = (
+				515B88484F85DA78A2A2FE7F /* TranscriptFormatter.swift */,
+				30AEB805022D71EC1FD79A2B /* TranslationLanguage.swift */,
+			);
+			path = Gemini;
+			sourceTree = "<group>";
+		};
+		A2CC11C174049880863CE704 /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				25C940284BA8B268E2282F2C /* AudioCaptureEngine.swift */,
+				DF5E6E8C47A1E4CB4406CA73 /* AudioCaptureEngine+Recording.swift */,
+				D0C8E4A993051E0D221E8FAC /* AudioCaptureEngine+Session.swift */,
+				A2918A4EB5F8CC895CFE0984 /* AudioCaptureEngine+Streaming.swift */,
+				5348BD2E1D3D19A0618490E7 /* AudioCaptureModels.swift */,
+			);
+			path = Audio;
+			sourceTree = "<group>";
+		};
+		C3099AA6A5F0F5066956E49A /* LiveActivityExtension */ = {
+			isa = PBXGroup;
+			children = (
+				4A5B4D2C79612F995D04B10C /* GeminiVoiceActivity.entitlements */,
+				DBF177D8412EF5443867BE5C /* GeminiVoiceActivityWidget.swift */,
+				57CEA481BD7EB7B1C36FBE9A /* Info.plist */,
+				106A836CF2F83094CF5445EF /* PrivacyInfo.xcprivacy */,
+			);
+			path = LiveActivityExtension;
+			sourceTree = "<group>";
+		};
+		C35813FAE085D99C925FB5F2 /* Batch */ = {
+			isa = PBXGroup;
+			children = (
+				DCC7D803FA19525B70196B48 /* GeminiInteractionResponse.swift */,
+				94A073542623364DA480481F /* GeminiTranscriptionClient.swift */,
+			);
+			path = Batch;
+			sourceTree = "<group>";
+		};
+		DF969398151B090DAF31B03D /* App */ = {
+			isa = PBXGroup;
+			children = (
+				FB52084C6DF98C436D792984 /* GeminiVoice.entitlements */,
+				6161793133F1494AB847AFB6 /* Info.plist */,
+				F0C6AEEF1CB027B40420FAEE /* PrivacyInfo.xcprivacy */,
+				E748CC30F3BA7E45A3CD03C1 /* Application */,
+				A2CC11C174049880863CE704 /* Audio */,
+				26B919888600642D5A2D3233 /* Gemini */,
+				9DB03D4F96829BF30CC441FC /* Recovery */,
+				526B341CB95943F682826ED1 /* Relay */,
+				F363C3656BA1E04A29123712 /* UI */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		E748CC30F3BA7E45A3CD03C1 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				9A9B051804088502709840CC /* AppConfiguration.swift */,
+				05DB2F68FE7A362E6384E9D5 /* GeminiCredentialStore.swift */,
+				5CF6BC1062BAA9732BD376FB /* GeminiVoiceApp.swift */,
+				95BD5099BCB9A27DEA703E94 /* OpenGeminiVoiceIntent.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		F363C3656BA1E04A29123712 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				2762D855CEB7A1A0BFB19D5C /* ContentView.swift */,
+				68BF8722DB584AEC8F816E86 /* ContentView+Handoff.swift */,
+				2DE5FADD865F082BE2ABD2A8 /* ContentView+Helpers.swift */,
+				26DAC3B3F68D1B41A91AA23F /* ContentView+History.swift */,
+				05A7C2DEE3F4764876B9AEF3 /* ContentView+Overview.swift */,
+				C8B964B5303D942293FC59EC /* ContentView+Settings.swift */,
+				3F1517E25DE9CE5F392E5CEB /* ContentView+Setup.swift */,
+				8C87E25E9B8458D535AD9D6E /* ImagePicker.swift */,
+				4DFADE514ADFB1739650FAB7 /* OCRButtonStyle.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1F941C52C36A12CD6AA0FABE /* GeminiVoiceActivity */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 53F30A4AAEA6D2A33F07A2EA /* Build configuration list for PBXNativeTarget "GeminiVoiceActivity" */;
+			buildPhases = (
+				4DAD7C1DF8FB947A0CFCB7A4 /* Sources */,
+				52C17FC0222B4B6C17331131 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GeminiVoiceActivity;
+			packageProductDependencies = (
+			);
+			productName = GeminiVoiceActivity;
+			productReference = D81E7EB20CB02B75271EDEA0 /* GeminiVoiceActivity.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		3CDBB14042DE64B20DC777EF /* GeminiVoiceUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 08F565250D7488C041F3CE57 /* Build configuration list for PBXNativeTarget "GeminiVoiceUITests" */;
+			buildPhases = (
+				94B2BD3DD18D97675CE7D656 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6D06BC65DD65466710CDF7BC /* PBXTargetDependency */,
+			);
+			name = GeminiVoiceUITests;
+			packageProductDependencies = (
+			);
+			productName = GeminiVoiceUITests;
+			productReference = BA74E262E74790491BF9D732 /* GeminiVoiceUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		783E0DBDB08A86B2BCF027D9 /* GeminiVoiceTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FCB162D57EDA0F5BEE876056 /* Build configuration list for PBXNativeTarget "GeminiVoiceTests" */;
+			buildPhases = (
+				A8D4CBC1261BD5C2C2B97DE1 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A4A5BBCCAD19AB7B14B388B3 /* PBXTargetDependency */,
+			);
+			name = GeminiVoiceTests;
+			packageProductDependencies = (
+			);
+			productName = GeminiVoiceTests;
+			productReference = 8482805D944C1F8CA40E19D1 /* GeminiVoiceTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		85CCD170A2DC264CFB4CED27 /* GeminiVoiceKeyboard */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 966B3E4C408CA7F28FC5E4FC /* Build configuration list for PBXNativeTarget "GeminiVoiceKeyboard" */;
+			buildPhases = (
+				72D186A498D9E1D8ED830C4B /* Sources */,
+				CEA5A37E5C0887334C16A5DC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GeminiVoiceKeyboard;
+			packageProductDependencies = (
+			);
+			productName = GeminiVoiceKeyboard;
+			productReference = 5F06A35D82716D9FEDD8B47A /* GeminiVoiceKeyboard.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		C17AFB129EF1AF599E1D351F /* GeminiVoice */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BC9B30EA380D6096F4127EEC /* Build configuration list for PBXNativeTarget "GeminiVoice" */;
+			buildPhases = (
+				4040AA39CBA410044DCCE60E /* Sources */,
+				1E755FCA5A7ADC95B2AF98B6 /* Resources */,
+				360A3B38C501C4F81FD5094A /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D1231FFE153C76C21C70D693 /* PBXTargetDependency */,
+				0612DD270DD0493174776C79 /* PBXTargetDependency */,
+			);
+			name = GeminiVoice;
+			packageProductDependencies = (
+			);
+			productName = GeminiVoice;
+			productReference = E8BA880A71D5E1D69625FE56 /* GeminiVoice.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D38FDFB873B4D1312129020F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					1F941C52C36A12CD6AA0FABE = {
+						DevelopmentTeam = "";
+						ProvisioningStyle = Automatic;
+					};
+					3CDBB14042DE64B20DC777EF = {
+						ProvisioningStyle = Automatic;
+						TestTargetID = C17AFB129EF1AF599E1D351F;
+					};
+					783E0DBDB08A86B2BCF027D9 = {
+						ProvisioningStyle = Automatic;
+					};
+					85CCD170A2DC264CFB4CED27 = {
+						DevelopmentTeam = "";
+						ProvisioningStyle = Automatic;
+					};
+					C17AFB129EF1AF599E1D351F = {
+						DevelopmentTeam = "";
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 4F5C5E5BD2ADC169D6B497ED /* Build configuration list for PBXProject "GeminiVoiceKeyboard" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 7E942C686DE068923FF927EA;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 499391C8EDE58B69B118E63F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C17AFB129EF1AF599E1D351F /* GeminiVoice */,
+				85CCD170A2DC264CFB4CED27 /* GeminiVoiceKeyboard */,
+				1F941C52C36A12CD6AA0FABE /* GeminiVoiceActivity */,
+				783E0DBDB08A86B2BCF027D9 /* GeminiVoiceTests */,
+				3CDBB14042DE64B20DC777EF /* GeminiVoiceUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1E755FCA5A7ADC95B2AF98B6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3130386E5EEA63F261BCA87D /* Assets.xcassets in Resources */,
+				71B2A414304576AB605CC2D3 /* PrivacyInfo.xcprivacy in Resources */,
+				E25225D30E4365D7112B02BB /* README.md in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52C17FC0222B4B6C17331131 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5FD2F450FB4AADB13FD0654E /* PrivacyInfo.xcprivacy in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CEA5A37E5C0887334C16A5DC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A76A12824DE24F3349BA19D /* PrivacyInfo.xcprivacy in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4040AA39CBA410044DCCE60E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B462998FF875827E666758F2 /* AppConfiguration.swift in Sources */,
+				232C281C02E4EF8BB3B07F11 /* AudioCaptureEngine+Recording.swift in Sources */,
+				959362742AD6E9340B45E54D /* AudioCaptureEngine+Session.swift in Sources */,
+				20C7F112A04D95719FE7C67B /* AudioCaptureEngine+Streaming.swift in Sources */,
+				64E21E4C78698BD9882D7290 /* AudioCaptureEngine.swift in Sources */,
+				1994CF4FCC1139D4466E1264 /* AudioCaptureModels.swift in Sources */,
+				E8098EE993C666DC88181A07 /* ContentView+Handoff.swift in Sources */,
+				5F644235A43748A906EDACE5 /* ContentView+Helpers.swift in Sources */,
+				19DAF9A48A950CF8C92D6588 /* ContentView+History.swift in Sources */,
+				5CFEA1B4963E7536FEFD6E37 /* ContentView+Overview.swift in Sources */,
+				AEDA87A9DCB0E940549AA2DA /* ContentView+Settings.swift in Sources */,
+				FFF8A8BA3E805BF56933F995 /* ContentView+Setup.swift in Sources */,
+				5560D83BDFD9BB77285A9217 /* ContentView.swift in Sources */,
+				4B12F27AF4ACB6891BB745D9 /* GeminiCredentialStore.swift in Sources */,
+				1DC1F03382C6A4D9169EA484 /* GeminiInteractionResponse.swift in Sources */,
+				9005FF50E485C9F295168809 /* GeminiLiveProtocol.swift in Sources */,
+				D9B404717D1738BCA42B9B57 /* GeminiLiveSpeechSession+Finalization.swift in Sources */,
+				7834C07DE1942420E7156AB4 /* GeminiLiveSpeechSession+Streaming.swift in Sources */,
+				FCB2F573ADEA91C8B120FE89 /* GeminiLiveSpeechSession.swift in Sources */,
+				14220264EF82179CA97DCE9F /* GeminiLiveTimeout.swift in Sources */,
+				2E5C9B7970D3D4188C948F6F /* GeminiLiveTransport.swift in Sources */,
+				0959ACB53E242A30163D6565 /* GeminiTranscriptionClient.swift in Sources */,
+				BE9F03003BD91B65231F177F /* GeminiVoiceApp.swift in Sources */,
+				4CF2C2B52D84822E623CF4CE /* ImagePicker.swift in Sources */,
+				9F008710C5D30BB7A2CD6579 /* KeyboardInteractionState.swift in Sources */,
+				B2D1786F07AE74EE1C910462 /* OCRButtonStyle.swift in Sources */,
+				D401F40FE6847E8FDB1BE5F0 /* OpenGeminiVoiceIntent.swift in Sources */,
+				84E2D655AE37D2F23C7D6999 /* RecoverableRecordingStore.swift in Sources */,
+				2DAFE637CA8D653A7A9B30CA /* RelayController+BackgroundTasks.swift in Sources */,
+				CF205EF65264F6571FD051FE /* RelayController+Dictation.swift in Sources */,
+				0706EF32CAF90E9985C92B32 /* RelayController+HostReturn.swift in Sources */,
+				4320D50A6BDCB7220B88AAA3 /* RelayController+OCR.swift in Sources */,
+				8FF28C3F3448483DCE223BBD /* RelayController+Polling.swift in Sources */,
+				EDAC8A96AC3BCF2650E46053 /* RelayController+Publishing.swift in Sources */,
+				1660D2E256AB1D071098B258 /* RelayController+Recovery.swift in Sources */,
+				4DF54FE0C6E8917861CE5265 /* RelayController+Transcription.swift in Sources */,
+				8DC4C0C341787E9B3E7EE086 /* RelayController.swift in Sources */,
+				600861AE60C73C0AA6997CBF /* RelayLaunchRequest.swift in Sources */,
+				8CE278F2EA4B5C71FA7B9E42 /* RelayTypes.swift in Sources */,
+				7FF592C094D13400EA77EB8E /* SharedRelayStore.swift in Sources */,
+				31EB32FD752305E5D4B55FCF /* StopVoiceRelayIntent.swift in Sources */,
+				A7B9111AD0A39AA6C53DAAB0 /* TranscriptFormatter.swift in Sources */,
+				298F0D1448AD04FBA77D88F0 /* TranscriptHistoryStore.swift in Sources */,
+				70EFD71F8D86397F2B923141 /* TranslationLanguage.swift in Sources */,
+				FA38DA1E2F7807BA8FD21BDA /* VoiceRelayActivityAttributes.swift in Sources */,
+				36768458F3847799675146EB /* VoiceRelayLiveActivityController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4DAD7C1DF8FB947A0CFCB7A4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				18E3E49F046203C1FF5A97AA /* GeminiVoiceActivityWidget.swift in Sources */,
+				202BD6CC3AA0E20F442A2B47 /* RelayLaunchRequest.swift in Sources */,
+				20A81F680D4F00DD010C4230 /* RelayTypes.swift in Sources */,
+				CADE538F4B9B4377A8D17B22 /* SharedRelayStore.swift in Sources */,
+				2FA7FD874B40AA4A779C023F /* StopVoiceRelayIntent.swift in Sources */,
+				B3E1D728072C82E06FE0CB2D /* VoiceRelayActivityAttributes.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		72D186A498D9E1D8ED830C4B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B58A72D697F9FA8379D962F7 /* KeyPreviewView.swift in Sources */,
+				ABF62447226B29141944DBB1 /* KeyboardBrandMarkView.swift in Sources */,
+				06A88338C04E108AE592D398 /* KeyboardButton.swift in Sources */,
+				F14471C0AB87DBBE81EB24FE /* KeyboardInteractionState.swift in Sources */,
+				51118903A0E0C269A9ED99C0 /* KeyboardViewController+ContainingAppLaunch.swift in Sources */,
+				2EF4D0C8EB36A02DC604D4AA /* KeyboardViewController+DictationActions.swift in Sources */,
+				D5334AF2EDD40B29EE08854B /* KeyboardViewController+HostResolution.swift in Sources */,
+				1EE6A965DDE886E7F85B664A /* KeyboardViewController+Layout.swift in Sources */,
+				8D9DBE174C91EC340FCF5CFC /* KeyboardViewController+Persistence.swift in Sources */,
+				2CF3658BCD55F397F97CF714 /* KeyboardViewController+PersonalHostLookup.swift in Sources */,
+				B332608D2ED0DDBDD2271C42 /* KeyboardViewController+Presentation.swift in Sources */,
+				E277099D7728EB9155E9E615 /* KeyboardViewController+RelayState.swift in Sources */,
+				83D66E80028614131A8907D5 /* KeyboardViewController+Typing.swift in Sources */,
+				2B8D1D0AFA0157B9D7967BC3 /* KeyboardViewController.swift in Sources */,
+				6969E24601BACC67482F8401 /* LiveWaveformView.swift in Sources */,
+				25356F5E39DE2C8BED4F1BBB /* RelayLaunchRequest.swift in Sources */,
+				373DE81DDD5D158E0DA7DFD9 /* RelayTypes.swift in Sources */,
+				D3107FE59B6E88FA7F58DE07 /* SharedRelayStore.swift in Sources */,
+				2EE112758DA3F0F47B25BC78 /* TranscriptFormatter.swift in Sources */,
+				84026D55C74CB60A0DB64C9B /* TranslationLanguage.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		94B2BD3DD18D97675CE7D656 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0A6DE82124688F8994004657 /* GeminiVoiceUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A8D4CBC1261BD5C2C2B97DE1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				97B62DC86C92C06B7EB28C68 /* AudioCaptureEngineTests.swift in Sources */,
+				6ACE7BB879A4FC5EE8CFD17A /* GeminiLiveSpeechSessionTests.swift in Sources */,
+				5752C7AEC51337DBBE81D4C1 /* GeminiTranscriptionClientTests.swift in Sources */,
+				1925B8CBE3B53B24F9500A85 /* KeyboardInteractionStateTests.swift in Sources */,
+				5BBDB934FE633334950A0153 /* RecoverableRecordingStoreTests.swift in Sources */,
+				BD98041F610C4009A953E7F0 /* RelayControllerTests.swift in Sources */,
+				B156FC9060F167DC69FDDC48 /* RelayIdleShutdownPolicyTests.swift in Sources */,
+				54906E53BAED2B9255AC7F8A /* RelayProtocolTests.swift in Sources */,
+				9238DB518D9A23C4DEC2507F /* TranscriptFormatterTests.swift in Sources */,
+				1A2ECA2E8EBE9FD6354BB9B5 /* TranscriptHistoryStoreTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0612DD270DD0493174776C79 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1F941C52C36A12CD6AA0FABE /* GeminiVoiceActivity */;
+			targetProxy = 4323EB0089F357952C911470 /* PBXContainerItemProxy */;
+		};
+		6D06BC65DD65466710CDF7BC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C17AFB129EF1AF599E1D351F /* GeminiVoice */;
+			targetProxy = CF21C4FA36B5E57A437C822B /* PBXContainerItemProxy */;
+		};
+		A4A5BBCCAD19AB7B14B388B3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C17AFB129EF1AF599E1D351F /* GeminiVoice */;
+			targetProxy = 5932F360C25A14731BAD6D4D /* PBXContainerItemProxy */;
+		};
+		D1231FFE153C76C21C70D693 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 85CCD170A2DC264CFB4CED27 /* GeminiVoiceKeyboard */;
+			targetProxy = E048E28AE2AFB5C0E37BE442 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		04F64B09490FFF325525F1E4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGNING_ALLOWED = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.GeminiVoiceSampleUITests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = GeminiVoice;
+			};
+			name = Debug;
+		};
+		0504D21F9868CBDC2B6D27FB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BFCFF6E321EE159937108176 /* Release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = KeyboardExtension/GeminiVoiceKeyboard.entitlements;
+				CURRENT_PROJECT_VERSION = 35;
+				INFOPLIST_FILE = KeyboardExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "$(GEMINI_KEYBOARD_BUNDLE_IDENTIFIER)";
+				PRODUCT_NAME = "Gemini Voice Keyboard";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		39B6D96A9E7DD1A2DDCEA05B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C21AF0438E0898682839FE2E /* Debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = App/GeminiVoice.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 35;
+				INFOPLIST_FILE = App/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "$(GEMINI_APP_BUNDLE_IDENTIFIER)";
+				PRODUCT_NAME = GeminiVoice;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) GEMINI_PERSONAL_DEVICE";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4519338E28AB9BA7EECB5DCF /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BFCFF6E321EE159937108176 /* Release.xcconfig */;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_ENTITLEMENTS = LiveActivityExtension/GeminiVoiceActivity.entitlements;
+				CURRENT_PROJECT_VERSION = 35;
+				INFOPLIST_FILE = LiveActivityExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "$(GEMINI_ACTIVITY_BUNDLE_IDENTIFIER)";
+				PRODUCT_NAME = "Gemini Voice Activity";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		60252EB9A0B5058DDEAD1341 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGNING_ALLOWED = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.GeminiVoiceSampleTests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GeminiVoice.app/GeminiVoice";
+			};
+			name = Release;
+		};
+		68FB7702CDC55BAB7A923F7F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGNING_ALLOWED = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.GeminiVoiceSampleTests;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) GEMINI_PERSONAL_DEVICE";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GeminiVoice.app/GeminiVoice";
+			};
+			name = Debug;
+		};
+		8475CC999024D7E67BDB6EF2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGNING_ALLOWED = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.GeminiVoiceSampleUITests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = GeminiVoice;
+			};
+			name = Release;
+		};
+		8A875EA060E99946C3ED9BD9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C21AF0438E0898682839FE2E /* Debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = KeyboardExtension/GeminiVoiceKeyboard.entitlements;
+				CURRENT_PROJECT_VERSION = 35;
+				INFOPLIST_FILE = KeyboardExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "$(GEMINI_KEYBOARD_BUNDLE_IDENTIFIER)";
+				PRODUCT_NAME = "Gemini Voice Keyboard";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) GEMINI_PERSONAL_DEVICE";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A665F3B36350C6C03DB112DA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C21AF0438E0898682839FE2E /* Debug.xcconfig */;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_ENTITLEMENTS = LiveActivityExtension/GeminiVoiceActivity.entitlements;
+				CURRENT_PROJECT_VERSION = 35;
+				INFOPLIST_FILE = LiveActivityExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "$(GEMINI_ACTIVITY_BUNDLE_IDENTIFIER)";
+				PRODUCT_NAME = "Gemini Voice Activity";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A7DCFB007F3EE22039C7B2AB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BFCFF6E321EE159937108176 /* Release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = App/GeminiVoice.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 35;
+				INFOPLIST_FILE = App/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "$(GEMINI_APP_BUNDLE_IDENTIFIER)";
+				PRODUCT_NAME = GeminiVoice;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		C7EC1E77EB82600B00EF1259 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D2BECB9DC67AAF1CA9B302BE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		08F565250D7488C041F3CE57 /* Build configuration list for PBXNativeTarget "GeminiVoiceUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04F64B09490FFF325525F1E4 /* Debug */,
+				8475CC999024D7E67BDB6EF2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		4F5C5E5BD2ADC169D6B497ED /* Build configuration list for PBXProject "GeminiVoiceKeyboard" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C7EC1E77EB82600B00EF1259 /* Debug */,
+				D2BECB9DC67AAF1CA9B302BE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		53F30A4AAEA6D2A33F07A2EA /* Build configuration list for PBXNativeTarget "GeminiVoiceActivity" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A665F3B36350C6C03DB112DA /* Debug */,
+				4519338E28AB9BA7EECB5DCF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		966B3E4C408CA7F28FC5E4FC /* Build configuration list for PBXNativeTarget "GeminiVoiceKeyboard" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8A875EA060E99946C3ED9BD9 /* Debug */,
+				0504D21F9868CBDC2B6D27FB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		BC9B30EA380D6096F4127EEC /* Build configuration list for PBXNativeTarget "GeminiVoice" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				39B6D96A9E7DD1A2DDCEA05B /* Debug */,
+				A7DCFB007F3EE22039C7B2AB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		FCB162D57EDA0F5BEE876056 /* Build configuration list for PBXNativeTarget "GeminiVoiceTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				68FB7702CDC55BAB7A923F7F /* Debug */,
+				60252EB9A0B5058DDEAD1341 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D38FDFB873B4D1312129020F /* Project object */;
+}

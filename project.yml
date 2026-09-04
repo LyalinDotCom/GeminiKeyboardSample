@@ -1,0 +1,141 @@
+name: GeminiVoiceKeyboard
+
+options:
+  bundleIdPrefix: com.example
+  deploymentTarget:
+    iOS: "26.0"
+  createIntermediateGroups: true
+  generateEmptyDirectories: true
+
+settings:
+  base:
+    CODE_SIGN_STYLE: Automatic
+    SWIFT_VERSION: "5.0"
+    IPHONEOS_DEPLOYMENT_TARGET: "26.0"
+    TARGETED_DEVICE_FAMILY: "1,2"
+    SUPPORTS_MACCATALYST: NO
+    ENABLE_USER_SCRIPT_SANDBOXING: YES
+
+targets:
+  GeminiVoice:
+    type: application
+    platform: iOS
+    sources:
+      - path: App
+      - path: Shared
+      - path: LiveActivityShared
+      - path: App/PrivacyInfo.xcprivacy
+        buildPhase: resources
+      - path: Resources/Assets.xcassets
+        buildPhase: resources
+    configFiles:
+      Debug: Config/Debug.xcconfig
+      Release: Config/Release.xcconfig
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: "$(GEMINI_APP_BUNDLE_IDENTIFIER)"
+        PRODUCT_NAME: GeminiVoice
+        INFOPLIST_FILE: App/Info.plist
+        CODE_SIGN_ENTITLEMENTS: App/GeminiVoice.entitlements
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        CURRENT_PROJECT_VERSION: 35
+        MARKETING_VERSION: 0.1.0
+      configs:
+        Debug:
+          SWIFT_ACTIVE_COMPILATION_CONDITIONS: "$(inherited) GEMINI_PERSONAL_DEVICE"
+    dependencies:
+      - target: GeminiVoiceKeyboard
+        embed: true
+      - target: GeminiVoiceActivity
+        embed: true
+
+  GeminiVoiceKeyboard:
+    type: app-extension
+    platform: iOS
+    sources:
+      - path: KeyboardExtension
+      - path: Shared
+      - path: KeyboardExtension/PrivacyInfo.xcprivacy
+        buildPhase: resources
+    configFiles:
+      Debug: Config/Debug.xcconfig
+      Release: Config/Release.xcconfig
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: "$(GEMINI_KEYBOARD_BUNDLE_IDENTIFIER)"
+        PRODUCT_NAME: Gemini Voice Keyboard
+        INFOPLIST_FILE: KeyboardExtension/Info.plist
+        CODE_SIGN_ENTITLEMENTS: KeyboardExtension/GeminiVoiceKeyboard.entitlements
+        SKIP_INSTALL: YES
+        CURRENT_PROJECT_VERSION: 35
+        MARKETING_VERSION: 0.1.0
+      configs:
+        Debug:
+          SWIFT_ACTIVE_COMPILATION_CONDITIONS: "$(inherited) GEMINI_PERSONAL_DEVICE"
+
+  GeminiVoiceActivity:
+    type: app-extension
+    platform: iOS
+    sources:
+      - path: LiveActivityExtension
+      - path: LiveActivityShared
+      - path: Shared/Relay
+      - path: LiveActivityExtension/PrivacyInfo.xcprivacy
+        buildPhase: resources
+    configFiles:
+      Debug: Config/Debug.xcconfig
+      Release: Config/Release.xcconfig
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: "$(GEMINI_ACTIVITY_BUNDLE_IDENTIFIER)"
+        PRODUCT_NAME: Gemini Voice Activity
+        INFOPLIST_FILE: LiveActivityExtension/Info.plist
+        CODE_SIGN_ENTITLEMENTS: LiveActivityExtension/GeminiVoiceActivity.entitlements
+        APPLICATION_EXTENSION_API_ONLY: YES
+        SKIP_INSTALL: YES
+        CURRENT_PROJECT_VERSION: 35
+        MARKETING_VERSION: 0.1.0
+
+  GeminiVoiceTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - path: Tests
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.example.GeminiVoiceSampleTests
+        GENERATE_INFOPLIST_FILE: YES
+        CODE_SIGNING_ALLOWED: NO
+      configs:
+        Debug:
+          SWIFT_ACTIVE_COMPILATION_CONDITIONS: "$(inherited) GEMINI_PERSONAL_DEVICE"
+    dependencies:
+      - target: GeminiVoice
+
+  GeminiVoiceUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    sources:
+      - path: UITests
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.example.GeminiVoiceSampleUITests
+        GENERATE_INFOPLIST_FILE: YES
+        CODE_SIGNING_ALLOWED: NO
+    dependencies:
+      - target: GeminiVoice
+
+schemes:
+  GeminiVoice:
+    build:
+      targets:
+        GeminiVoice: all
+        GeminiVoiceKeyboard: all
+        GeminiVoiceActivity: all
+        GeminiVoiceTests: [test]
+        GeminiVoiceUITests: [test]
+    test:
+      gatherCoverageData: true
+      targets:
+        - GeminiVoiceTests
+        - GeminiVoiceUITests

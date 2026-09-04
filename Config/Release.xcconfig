@@ -1,0 +1,12 @@
+// Release builds intentionally contain no Gemini credential.
+// Production requests require a backend proxy; Live sessions should use a
+// backend-issued ephemeral token.
+DEVELOPMENT_TEAM =
+GEMINI_APP_BUNDLE_IDENTIFIER = com.example.GeminiVoiceSample
+GEMINI_KEYBOARD_BUNDLE_IDENTIFIER = com.example.GeminiVoiceSample.Keyboard
+GEMINI_ACTIVITY_BUNDLE_IDENTIFIER = com.example.GeminiVoiceSample.LiveActivity
+GEMINI_APP_GROUP_IDENTIFIER = group.com.example.GeminiVoiceSample
+GEMINI_DEFAULT_API_KEY =
+GEMINI_DEFAULT_TRANSCRIPTION_MODEL = gemini-3.5-transcribe
+GEMINI_DEFAULT_OCR_MODEL = gemini-3.7-flash
+GEMINI_DEFAULT_TRANSLATION_MODEL = gemini-3.7-flash

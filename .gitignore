@@ -1,0 +1,30 @@
+.DS_Store
+DerivedData/
+*DerivedData/
+build/
+*.xcuserstate
+xcuserdata/
+Config/Secrets.xcconfig
+DEPLOYMENT.local.md
+
+# Local credentials and signing material
+.env
+.env.*
+!.env.example
+*.p12
+*.pfx
+*.mobileprovision
+*.provisionprofile
+*.cer
+*.key
+*.pem
+
+# Generated Apple build artifacts
+.build/
+.swiftpm/
+*.xcresult
+*.xcarchive
+*.ipa
+*.dSYM
+*.dSYM.zip
+SourcePackages/
