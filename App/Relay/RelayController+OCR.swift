@@ -26,6 +26,11 @@ extension RelayController {
   }
 
   func handleDeepLink(_ url: URL) {
+    if url.scheme?.lowercased() == "geminivoice", url.host?.lowercased() == "open" {
+      // The keyboard's brand mark just brings the app forward. There is no
+      // request to claim, and the scene-phase handler starts the relay.
+      return
+    }
     if let request = RelayLaunchRequest.parse(url) {
       guard store.pendingLaunchRequest() == request else {
         if !isRelayRunning {

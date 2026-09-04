@@ -4,7 +4,13 @@ struct GeminiTranscriptionClient {
   static let maximumInlineAudioBytes = 14_000_000
   static let maximumInlineImageBytes = 10_000_000
 
+  /// Transient service statuses that are worth one or two more attempts
+  /// before the recording is parked for a manual retry. A 503 from Gemini
+  /// ("service unavailable" / model overloaded) usually clears in a second.
+  static let retryableStatusCodes: Set<Int> = [429, 500, 502, 503, 504]
+
   private let session: URLSession
+  private let retryDelays: [TimeInterval]
   private let endpoint: URL = {
     guard
       let endpoint = URL(
@@ -17,8 +23,11 @@ struct GeminiTranscriptionClient {
     return endpoint
   }()
 
-  init(session: URLSession = .shared) {
+  /// - Parameter retryDelays: Back-off before each retry of a transient
+  ///   service failure. The count bounds the number of retries.
+  init(session: URLSession = .shared, retryDelays: [TimeInterval] = [0.8, 1.6]) {
     self.session = session
+    self.retryDelays = retryDelays
   }
 
   func transcribe(
@@ -159,20 +168,36 @@ struct GeminiTranscriptionClient {
     request.setValue(apiKey, forHTTPHeaderField: "x-goog-api-key")
     request.httpBody = try JSONSerialization.data(withJSONObject: body)
 
-    try Task.checkCancellation()
-    let (data, response) = try await session.data(for: request)
-    guard let httpResponse = response as? HTTPURLResponse else {
-      throw GeminiTranscriptionError.invalidResponse
-    }
+    var attempt = 0
+    while true {
+      try Task.checkCancellation()
+      let (data, response) = try await session.data(for: request)
+      guard let httpResponse = response as? HTTPURLResponse else {
+        throw GeminiTranscriptionError.invalidResponse
+      }
 
-    guard (200..<300).contains(httpResponse.statusCode) else {
-      throw serviceError(from: data, statusCode: httpResponse.statusCode)
-    }
+      guard (200..<300).contains(httpResponse.statusCode) else {
+        let error = serviceError(from: data, statusCode: httpResponse.statusCode)
+        guard Self.retryableStatusCodes.contains(httpResponse.statusCode),
+          attempt < retryDelays.count
+        else {
+          throw error
+        }
+        NSLog(
+          "GEMINI_BATCH_RETRY status=%d attempt=%d",
+          httpResponse.statusCode,
+          attempt + 1
+        )
+        try await Task.sleep(nanoseconds: UInt64(max(0, retryDelays[attempt]) * 1_000_000_000))
+        attempt += 1
+        continue
+      }
 
-    return try GeminiInteractionParser.text(
-      from: data,
-      emptyResultError: emptyResultError
-    )
+      return try GeminiInteractionParser.text(
+        from: data,
+        emptyResultError: emptyResultError
+      )
+    }
   }
 
   private func serviceError(from data: Data, statusCode: Int) -> GeminiTranscriptionError {

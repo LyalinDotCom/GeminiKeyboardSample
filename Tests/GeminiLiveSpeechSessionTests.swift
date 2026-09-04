@@ -134,7 +134,10 @@ final class GeminiLiveSpeechSessionTests: XCTestCase {
     XCTAssertEqual(detection["disabled"] as? Bool, true)
   }
 
-  func testTranslationTranscriptTogglesAreInsideGenerationConfig() throws {
+  func testTranslationTranscriptTogglesAreSetupFieldsNotGenerationConfigFields() throws {
+    // Verified against the live endpoint: transcription toggles nested in
+    // generationConfig are rejected with close code 1007 before
+    // setupComplete, while translationConfig must stay in generationConfig.
     let message = GeminiLiveSpeechSession.setupMessage(
       for: .translate(targetLanguageCode: "pl")
     )
@@ -143,13 +146,14 @@ final class GeminiLiveSpeechSessionTests: XCTestCase {
       setup["model"] as? String,
       "models/gemini-3.5-live-translate-preview"
     )
-    XCTAssertNil(setup["inputAudioTranscription"])
-    XCTAssertNil(setup["outputAudioTranscription"])
+    XCTAssertNotNil(setup["inputAudioTranscription"])
+    XCTAssertNotNil(setup["outputAudioTranscription"])
+    XCTAssertNil(setup["translationConfig"])
 
     let generation = try XCTUnwrap(setup["generationConfig"] as? [String: Any])
     XCTAssertEqual(generation["responseModalities"] as? [String], ["AUDIO"])
-    XCTAssertNotNil(generation["inputAudioTranscription"])
-    XCTAssertNotNil(generation["outputAudioTranscription"])
+    XCTAssertNil(generation["inputAudioTranscription"])
+    XCTAssertNil(generation["outputAudioTranscription"])
     let translation = try XCTUnwrap(
       generation["translationConfig"] as? [String: Any]
     )

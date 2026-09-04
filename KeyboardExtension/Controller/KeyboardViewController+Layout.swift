@@ -73,6 +73,9 @@ extension KeyboardViewController {
       brandMarkView.widthAnchor.constraint(equalToConstant: 38),
       brandMarkView.heightAnchor.constraint(equalToConstant: 38),
     ])
+    brandMarkView.tapHandler = { [weak self] in
+      self?.openContainingAppFromBrandMark()
+    }
 
     let spacer = UIView()
     spacer.setContentHuggingPriority(.defaultLow, for: .horizontal)

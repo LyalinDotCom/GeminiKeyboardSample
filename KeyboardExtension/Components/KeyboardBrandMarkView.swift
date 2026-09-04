@@ -7,8 +7,15 @@ final class KeyboardBrandMarkView: UIView {
       systemName: "waveform", withConfiguration: UIImage.SymbolConfiguration(weight: .bold))
   )
 
+  /// Invoked on a tap. The keyboard uses it to open the containing app.
+  var tapHandler: (() -> Void)?
+
   override init(frame: CGRect) {
     super.init(frame: frame)
+
+    isUserInteractionEnabled = true
+    let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap))
+    addGestureRecognizer(tap)
 
     gradientLayer.colors = [
       UIColor.systemCyan.cgColor,
@@ -34,11 +41,39 @@ final class KeyboardBrandMarkView: UIView {
 
     isAccessibilityElement = true
     accessibilityLabel = "Gemini Voice"
+    accessibilityTraits = .button
+    accessibilityHint = "Opens the Gemini Voice app"
   }
 
   @available(*, unavailable)
   required init?(coder: NSCoder) {
     return nil
+  }
+
+  @objc private func handleTap() {
+    tapHandler?()
+  }
+
+  override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+    super.touchesBegan(touches, with: event)
+    setPressed(true)
+  }
+
+  override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+    super.touchesEnded(touches, with: event)
+    setPressed(false)
+  }
+
+  override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
+    super.touchesCancelled(touches, with: event)
+    setPressed(false)
+  }
+
+  private func setPressed(_ pressed: Bool) {
+    UIView.animate(withDuration: pressed ? 0.05 : 0.15) {
+      self.alpha = pressed ? 0.6 : 1
+      self.transform = pressed ? CGAffineTransform(scaleX: 0.94, y: 0.94) : .identity
+    }
   }
 
   override func layoutSubviews() {

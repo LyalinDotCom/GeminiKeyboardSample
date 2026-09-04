@@ -228,6 +228,113 @@ final class GeminiTranscriptionClientTests: XCTestCase {
     }
   }
 
+  func testTransientServiceUnavailableIsRetriedOnce() async throws {
+    let configuration = URLSessionConfiguration.ephemeral
+    configuration.protocolClasses = [MockURLProtocol.self]
+    let client = GeminiTranscriptionClient(
+      session: URLSession(configuration: configuration),
+      retryDelays: [0, 0]
+    )
+
+    MockURLProtocol.handler = { request in
+      let attempt = MockURLProtocol.startLoadingCount
+      let statusCode = attempt == 1 ? 503 : 200
+      let response = try XCTUnwrap(
+        HTTPURLResponse(
+          url: request.url!,
+          statusCode: statusCode,
+          httpVersion: nil,
+          headerFields: nil
+        )
+      )
+      let body =
+        statusCode == 503
+        ? #"{"error":{"code":503,"message":"The service is currently unavailable."}}"#
+        : #"{"steps":[{"type":"model_output","content":[{"type":"text","text":"Hola"}]}]}"#
+      return (response, Data(body.utf8))
+    }
+
+    let result = try await client.translate(
+      text: "Hello",
+      targetLanguage: TranslationLanguage.language(for: "es"),
+      apiKey: "test-key",
+      model: "gemini-3.7-flash"
+    )
+    XCTAssertEqual(result, "Hola")
+    XCTAssertEqual(MockURLProtocol.startLoadingCount, 2)
+  }
+
+  func testRetriesAreBoundedAndSurfaceTheLastServiceMessage() async {
+    let configuration = URLSessionConfiguration.ephemeral
+    configuration.protocolClasses = [MockURLProtocol.self]
+    let client = GeminiTranscriptionClient(
+      session: URLSession(configuration: configuration),
+      retryDelays: [0, 0]
+    )
+
+    MockURLProtocol.handler = { request in
+      let response = HTTPURLResponse(
+        url: request.url!,
+        statusCode: 503,
+        httpVersion: nil,
+        headerFields: nil
+      )!
+      return (
+        response,
+        Data(#"{"error":{"message":"The service is currently unavailable."}}"#.utf8)
+      )
+    }
+
+    do {
+      _ = try await client.transcribe(
+        audioData: Data([0, 1, 2, 3]),
+        apiKey: "test-key",
+        model: "gemini-3.5-transcribe"
+      )
+      XCTFail("Expected a service error")
+    } catch {
+      XCTAssertEqual(
+        error as? GeminiTranscriptionError,
+        .service(statusCode: 503, message: "The service is currently unavailable.")
+      )
+    }
+    XCTAssertEqual(MockURLProtocol.startLoadingCount, 3)
+  }
+
+  func testClientErrorsAreNotRetried() async {
+    let configuration = URLSessionConfiguration.ephemeral
+    configuration.protocolClasses = [MockURLProtocol.self]
+    let client = GeminiTranscriptionClient(
+      session: URLSession(configuration: configuration),
+      retryDelays: [0, 0]
+    )
+
+    MockURLProtocol.handler = { request in
+      let response = HTTPURLResponse(
+        url: request.url!,
+        statusCode: 400,
+        httpVersion: nil,
+        headerFields: nil
+      )!
+      return (response, Data(#"{"error":{"message":"Bad request."}}"#.utf8))
+    }
+
+    do {
+      _ = try await client.transcribe(
+        audioData: Data([0, 1, 2, 3]),
+        apiKey: "test-key",
+        model: "gemini-3.5-transcribe"
+      )
+      XCTFail("Expected a service error")
+    } catch {
+      XCTAssertEqual(
+        error as? GeminiTranscriptionError,
+        .service(statusCode: 400, message: "Bad request.")
+      )
+    }
+    XCTAssertEqual(MockURLProtocol.startLoadingCount, 1)
+  }
+
   func testImageOCRUsesImageInputAndParsesText() async throws {
     let configuration = URLSessionConfiguration.ephemeral
     configuration.protocolClasses = [MockURLProtocol.self]

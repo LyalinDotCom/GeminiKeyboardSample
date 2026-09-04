@@ -8,25 +8,12 @@ extension KeyboardViewController {
     hostLaunchAttemptedForRequestID = request.requestID
     store.authorizeLaunchRequest(request)
     #if GEMINI_PERSONAL_DEVICE
-      guard let url = request.makeURL(), let extensionContext else {
+      guard let url = request.makeURL() else {
         handleContainingAppLaunchResult(false, requestID: request.requestID)
         return
       }
-
-      extensionContext.open(url) { [weak self] opened in
-        Task { @MainActor [weak self] in
-          guard let self else { return }
-          if opened {
-            self.handleContainingAppLaunchResult(true, requestID: request.requestID)
-          } else {
-            self.openContainingAppThroughResponderChain(url) { [weak self] opened in
-              self?.handleContainingAppLaunchResult(
-                opened,
-                requestID: request.requestID
-              )
-            }
-          }
-        }
+      openContainingAppURL(url) { [weak self] opened in
+        self?.handleContainingAppLaunchResult(opened, requestID: request.requestID)
       }
     #else
       // App Review Guideline 4.4.1 forbids keyboard extensions from launching
@@ -36,7 +23,44 @@ extension KeyboardViewController {
     #endif
   }
 
+  /// The toolbar brand mark opens Gemini Voice with no dictation request, so
+  /// the user can reach history, recovery, and settings without leaving the
+  /// host app through the home screen. The app treats `geminivoice://open`
+  /// as a plain foreground request and claims nothing.
+  func openContainingAppFromBrandMark() {
+    #if GEMINI_PERSONAL_DEVICE
+      guard let url = URL(string: "geminivoice://open") else { return }
+      openContainingAppURL(url) { opened in
+        NSLog("GV_BRAND_MARK_OPEN result=%@", opened ? "true" : "false")
+      }
+    #else
+      // Same Guideline 4.4.1 constraint as the dictation handoff: a Release
+      // keyboard ships no launch trampoline, so the brand mark stays inert.
+    #endif
+  }
+
   #if GEMINI_PERSONAL_DEVICE
+    /// Opens `url` in the containing app: the documented extension-context
+    /// route first, then the responder-chain fallback that current iOS
+    /// releases still honor for this extension point. `completion` runs on
+    /// the main actor.
+    func openContainingAppURL(_ url: URL, completion: @escaping (Bool) -> Void) {
+      guard let extensionContext else {
+        completion(false)
+        return
+      }
+      extensionContext.open(url) { [weak self] opened in
+        Task { @MainActor [weak self] in
+          guard let self else { return }
+          if opened {
+            completion(true)
+          } else {
+            self.openContainingAppThroughResponderChain(url, completion: completion)
+          }
+        }
+      }
+    }
+
     /// UIKit does not officially advertise container-app launching for the
     /// custom-keyboard extension point. Current iOS releases reject the normal
     /// NSExtensionContext path, so use a responder-chain UIApplication URL

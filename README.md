@@ -85,7 +85,7 @@ A Debug build embeds the key from `Config/Secrets.xcconfig` into the app's `Info
 
 ### Live translation flow
 
-The translation model speaks the translation, so the setup asks for audio output plus transcriptions and the app keeps only the output text:
+The translation model speaks the translation, so the setup asks for audio output plus transcriptions and the app keeps only the output text. The transcription toggles are top-level setup fields; `translationConfig` lives inside `generationConfig`. Nesting the toggles inside `generationConfig` makes the server close the socket with code 1007 before `setupComplete`.
 
 ```json
 {
@@ -93,10 +93,10 @@ The translation model speaks the translation, so the setup asks for audio output
     "model": "models/gemini-3.5-live-translate-preview",
     "generationConfig": {
       "responseModalities": ["AUDIO"],
-      "inputAudioTranscription": {},
-      "outputAudioTranscription": {},
       "translationConfig": { "targetLanguageCode": "es", "echoTargetLanguage": true }
-    }
+    },
+    "inputAudioTranscription": {},
+    "outputAudioTranscription": {}
   }
 }
 ```

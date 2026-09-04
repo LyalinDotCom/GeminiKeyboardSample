@@ -45,18 +45,24 @@ extension GeminiLiveSpeechSession {
         ]
       ]
     case .translate(let targetLanguageCode):
+      // The transcription toggles are `BidiGenerateContentSetup` fields, not
+      // `GenerationConfig` fields. Nesting them inside `generationConfig`
+      // makes the server close the socket with 1007 "Unknown name
+      // inputAudioTranscription at setup.generation_config" before
+      // `setupComplete`, which silently forced every translation onto the
+      // batch fallback. `translationConfig` does belong in `generationConfig`.
       return [
         "setup": [
           "model": "models/\(translationModel)",
           "generationConfig": [
             "responseModalities": ["AUDIO"],
-            "inputAudioTranscription": [:],
-            "outputAudioTranscription": [:],
             "translationConfig": [
               "targetLanguageCode": targetLanguageCode,
               "echoTargetLanguage": true,
             ],
           ],
+          "inputAudioTranscription": [:],
+          "outputAudioTranscription": [:],
         ]
       ]
     }
