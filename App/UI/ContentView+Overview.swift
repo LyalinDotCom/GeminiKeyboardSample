@@ -2,6 +2,28 @@ import SwiftUI
 import UIKit
 
 extension ContentView {
+  var apiKeyRequiredCard: some View {
+    card {
+      VStack(alignment: .leading, spacing: 10) {
+        Label("Gemini API key required", systemImage: "key.fill")
+          .font(.headline)
+          .foregroundStyle(.orange)
+        Text(
+          "Add your Gemini API key below. Voice dictation, live translation, OCR, and saved-recording retries stay disabled until a key is configured."
+        )
+        .font(.subheadline)
+        .foregroundStyle(.white.opacity(0.72))
+        .fixedSize(horizontal: false, vertical: true)
+        Button("Open API key settings") {
+          settingsExpanded = true
+        }
+        .font(.subheadline.weight(.semibold))
+        .foregroundStyle(.cyan)
+      }
+    }
+    .accessibilityIdentifier("api-key-required-card")
+  }
+
   var header: some View {
     HStack(spacing: 14) {
       ZStack {
@@ -45,14 +67,20 @@ extension ContentView {
 
         VStack(alignment: .leading, spacing: 6) {
           Text(
-            relay.isRelayRunning
+            !configuration.hasUsableAPIKey
+              ? "Add an API key to continue"
+              : relay.isRelayRunning
               ? "Background relay is active"
               : relay.isRelayStarting
                 ? "Starting the relay automatically…"
                 : "Relay is off — tap below to restart"
           )
           .font(.title3.weight(.semibold))
-          Text(relay.statusMessage)
+          Text(
+            configuration.hasUsableAPIKey
+              ? relay.statusMessage
+              : GeminiCredentialAvailability.appMessage
+          )
             .font(.subheadline)
             .foregroundStyle(.white.opacity(0.68))
             .fixedSize(horizontal: false, vertical: true)
@@ -76,7 +104,9 @@ extension ContentView {
           HStack(spacing: 10) {
             Image(systemName: relay.isRelayRunning ? "stop.fill" : "mic.fill")
             Text(
-              relay.isRelayRunning
+              !configuration.hasUsableAPIKey
+                ? "API Key Required"
+                : relay.isRelayRunning
                 ? "Stop Until Next Open"
                 : relay.isRelayStarting
                   ? "Starting Relay…"
@@ -87,14 +117,17 @@ extension ContentView {
           .frame(maxWidth: .infinity)
           .padding(.vertical, 15)
           .background(
-            relay.isRelayRunning
+            !configuration.hasUsableAPIKey
+              ? Color.gray.opacity(0.45)
+              : relay.isRelayRunning
               ? Color.white.opacity(0.12)
               : Color.blue
           )
           .clipShape(RoundedRectangle(cornerRadius: 14, style: .continuous))
         }
         .buttonStyle(.plain)
-        .disabled(relay.isRelayStarting)
+        .disabled(relay.isRelayStarting || !configuration.hasUsableAPIKey)
+        .opacity(configuration.hasUsableAPIKey ? 1 : 0.64)
         .accessibilityIdentifier("relay-control-button")
       }
     }

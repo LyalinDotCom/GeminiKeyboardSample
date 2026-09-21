@@ -124,6 +124,18 @@ final class RelayProtocolTests: XCTestCase {
     XCTAssertNil(store.snapshot().offlineReason)
   }
 
+  func testMissingCredentialReasonReachesKeyboardSnapshot() {
+    store.publishStatus(
+      .offline,
+      message: GeminiCredentialAvailability.appMessage,
+      offlineReason: .missingAPIKey
+    )
+
+    let snapshot = store.snapshot()
+    XCTAssertEqual(snapshot.offlineReason, .missingAPIKey)
+    XCTAssertEqual(snapshot.message, GeminiCredentialAvailability.appMessage)
+  }
+
   func testCancelSupersedesAnUnconsumedStartForTheSameRequest() {
     store.issue(
       .start,

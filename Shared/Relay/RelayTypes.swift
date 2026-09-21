@@ -9,6 +9,7 @@ enum RelayOfflineReason: String, Codable {
   case stopped
   case idleTimeout
   case unavailable
+  case missingAPIKey
 }
 
 struct RelayCommandEnvelope: Equatable {

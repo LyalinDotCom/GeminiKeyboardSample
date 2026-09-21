@@ -33,6 +33,12 @@ extension KeyboardViewController {
         refreshFromSharedState()
         return
       }
+      guard keyboardHasUsableAPIKey,
+        snapshot.offlineReason != .missingAPIKey
+      else {
+        refreshFromSharedState()
+        return
+      }
 
       let requestID = UUID().uuidString
       let requestCreatedAt = Date()

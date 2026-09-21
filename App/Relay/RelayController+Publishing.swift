@@ -43,11 +43,14 @@ extension RelayController {
     }
   }
 
-  func publishUnavailable(message: String) {
+  func publishUnavailable(
+    message: String,
+    offlineReason: RelayOfflineReason = .unavailable
+  ) {
     idleShutdownWorkItem?.cancel()
     idleShutdownWorkItem = nil
     setLocalStatus(.error, message: message)
-    store.publishStatus(.offline, message: message, offlineReason: .unavailable)
+    store.publishStatus(.offline, message: message, offlineReason: offlineReason)
     relaySessionID = nil
     liveActivity.end(message: message)
   }

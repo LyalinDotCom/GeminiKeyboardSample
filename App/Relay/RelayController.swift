@@ -163,6 +163,15 @@ final class RelayController: ObservableObject {
     isRelayStarting = true
     defer { isRelayStarting = false }
 
+    guard configuration.hasUsableAPIKey else {
+      discardPendingLaunchRequest()
+      publishUnavailable(
+        message: GeminiCredentialAvailability.appMessage,
+        offlineReason: .missingAPIKey
+      )
+      return
+    }
+
     capture.recoveryHandler = { [weak self] result in
       Task { @MainActor [weak self] in
         guard let self,
@@ -185,12 +194,6 @@ final class RelayController: ObservableObject {
       return
     }
 
-    guard configuration.hasUsableAPIKey else {
-      discardPendingLaunchRequest()
-      publishUnavailable(message: GeminiTranscriptionError.missingAPIKey.localizedDescription)
-      return
-    }
-
     do {
       try capture.start()
       isRelayRunning = true
@@ -210,6 +213,14 @@ final class RelayController: ObservableObject {
       discardPendingLaunchRequest()
       publishUnavailable(message: error.localizedDescription)
     }
+  }
+
+  func credentialAvailabilityDidChange() {
+    guard !configuration.hasUsableAPIKey else { return }
+    stopRelay(
+      message: GeminiCredentialAvailability.appMessage,
+      offlineReason: .missingAPIKey
+    )
   }
 
   func stopRelay(

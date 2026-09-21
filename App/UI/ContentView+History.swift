@@ -56,7 +56,8 @@ extension ContentView {
                 .disabled(
                   recording.transcriptSaved == true
                     || relay.retryingRecordingID != nil
-                    || relay.status.isBusy)
+                    || relay.status.isBusy
+                    || !configuration.hasUsableAPIKey)
 
                 Button(role: .destructive) {
                   recordingPendingDeletion = recording

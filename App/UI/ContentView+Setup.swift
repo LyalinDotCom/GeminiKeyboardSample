@@ -39,7 +39,11 @@ extension ContentView {
           }
         }
 
-        Text(relay.ocrMessage)
+        Text(
+          configuration.hasUsableAPIKey
+            ? relay.ocrMessage
+            : "Add a Gemini API key in Settings to enable camera OCR."
+        )
           .font(.subheadline)
           .foregroundStyle(.white.opacity(0.66))
           .fixedSize(horizontal: false, vertical: true)
@@ -52,7 +56,8 @@ extension ContentView {
               .frame(maxWidth: .infinity)
           }
           .buttonStyle(OCRButtonStyle(color: .purple))
-          .disabled(relay.isProcessingImage)
+          .disabled(relay.isProcessingImage || !configuration.hasUsableAPIKey)
+          .opacity(configuration.hasUsableAPIKey ? 1 : 0.58)
           .accessibilityIdentifier("camera-ocr-button")
 
           Button {
@@ -62,7 +67,9 @@ extension ContentView {
               .frame(maxWidth: .infinity)
           }
           .buttonStyle(OCRButtonStyle(color: .blue))
-          .disabled(relay.isProcessingImage)
+          .disabled(relay.isProcessingImage || !configuration.hasUsableAPIKey)
+          .opacity(configuration.hasUsableAPIKey ? 1 : 0.58)
+          .accessibilityIdentifier("photo-ocr-button")
         }
       }
     }

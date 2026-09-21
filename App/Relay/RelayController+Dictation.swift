@@ -44,6 +44,13 @@ extension RelayController {
     requestID: String,
     action: RelayDictationAction
   ) {
+    guard configuration.hasUsableAPIKey else {
+      publishUnavailable(
+        message: GeminiCredentialAvailability.appMessage,
+        offlineReason: .missingAPIKey
+      )
+      return
+    }
     guard status != .transcribing, activeRequestID == nil else { return }
     markRelayActivityAndSuspendIdleShutdown()
 

@@ -41,6 +41,7 @@ extension ContentView {
   }
 
   var statusTitle: String {
+    if !configuration.hasUsableAPIKey { return "KEY REQUIRED" }
     switch relay.status {
     case .offline: return "OFFLINE"
     case .idle: return "READY"
@@ -51,6 +52,7 @@ extension ContentView {
   }
 
   var statusColor: Color {
+    if !configuration.hasUsableAPIKey { return .orange }
     switch relay.status {
     case .offline: return .gray
     case .idle: return .green

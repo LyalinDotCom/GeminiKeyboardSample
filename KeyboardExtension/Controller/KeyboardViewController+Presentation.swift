@@ -38,6 +38,37 @@ extension KeyboardViewController {
     true
   }
 
+  var keyboardHasUsableAPIKey: Bool {
+    sharedPreferences.bool(
+      forKey: GeminiCredentialAvailability.sharedDefaultsKey
+    )
+  }
+
+  func presentMissingCredential() {
+    let message = GeminiCredentialAvailability.keyboardMessage
+    setStatus(message, color: .systemOrange)
+    configureMicrophone(title: "Dictate", image: "key.slash", color: .systemGray)
+    configureTranslationButton(image: "key.slash", color: .systemGray)
+    microphoneButton.isEnabled = false
+    translateButton.isEnabled = false
+    cancelButton.isEnabled = false
+    timerLabel.isHidden = true
+    recordingPanel.isHidden = true
+    typingStack.isHidden = false
+    waveformView.setLevel(0, active: false)
+
+    processingIndicator.stopAnimating()
+    processingLabel.text = message
+    processingLabel.textColor = .systemOrange
+    processingStatusStack.accessibilityLabel = message
+    processingStatusStack.isHidden = false
+
+    microphoneButton.accessibilityLabel = "Gemini API key required"
+    microphoneButton.accessibilityHint = message
+    translateButton.accessibilityLabel = "Gemini API key required"
+    translateButton.accessibilityHint = message
+  }
+
   var keyboardTranslationTarget: TranslationLanguage {
     let code =
       sharedPreferences.string(forKey: TranslationPreferenceKey.targetCode)

@@ -22,6 +22,9 @@ struct ContentView: View {
       ScrollView {
         VStack(spacing: 18) {
           header
+          if !configuration.hasUsableAPIKey {
+            apiKeyRequiredCard
+          }
           relayCard
           ocrCard
           setupCard
@@ -36,6 +39,14 @@ struct ContentView: View {
       }
     }
     .preferredColorScheme(.dark)
+    .onAppear {
+      if !configuration.hasUsableAPIKey {
+        settingsExpanded = true
+      }
+    }
+    .onChange(of: configuration.apiKeyOverride) { _, _ in
+      relay.credentialAvailabilityDidChange()
+    }
     .overlay {
       if relay.isKeyboardHandoffActive {
         keyboardHandoffOverlay

@@ -44,6 +44,13 @@ extension KeyboardViewController {
       return
     }
 
+    guard keyboardHasUsableAPIKey,
+      snapshot.offlineReason != .missingAPIKey
+    else {
+      presentMissingCredential()
+      return
+    }
+
     guard snapshot.hostIsOnline(), snapshot.status != .offline else {
       if mode == .openingHost {
         if let activeRequestID,
@@ -191,7 +198,9 @@ extension KeyboardViewController {
   }
 
   func issueDeferredStartIfReady(with snapshot: RelaySnapshot) {
-    guard keyboardReactivationIsReady,
+    guard keyboardHasUsableAPIKey,
+      snapshot.offlineReason != .missingAPIKey,
+      keyboardReactivationIsReady,
       let activeRequestID,
       let activeDictationAction,
       let trackedRequestCreatedAt
