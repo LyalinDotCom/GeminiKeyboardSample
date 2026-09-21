@@ -8,8 +8,29 @@ extension RelayController {
     do {
       try historyStore.clear()
       history = historyStore.items
+      historyError = nil
     } catch {
-      statusMessage = error.localizedDescription
+      historyError = error.localizedDescription
+    }
+  }
+
+  func deleteHistoryItem(_ item: TranscriptHistoryItem) {
+    do {
+      try historyStore.remove(id: item.id)
+      history = historyStore.items
+      historyError = nil
+    } catch {
+      historyError = error.localizedDescription
+    }
+  }
+
+  func applyHistoryRetention() {
+    do {
+      try historyStore.removeExpired(retentionDays: configuration.historyRetentionDays)
+      history = historyStore.items
+      historyError = nil
+    } catch {
+      historyError = "Couldn’t update history: \(error.localizedDescription)"
     }
   }
 
@@ -63,12 +84,7 @@ extension RelayController {
           apiKey: apiKey
         )
         try Task.checkCancellation()
-        try addToHistory(outputText)
-        store.publishTranscript(
-          outputText,
-          requestID: retryRequestID,
-          kind: .dictation
-        )
+        try completeTranscription(outputText, requestID: retryRequestID, action: recording.action)
         do {
           try recoveryStore.remove(id: recording.id)
         } catch {
@@ -86,7 +102,7 @@ extension RelayController {
         }
         refreshRecoverableRecordings()
         if isRelayRunning {
-          publish(.idle, message: "Saved recording transcribed — ready to insert")
+          publish(.idle, message: recording.action == .note ? "Note saved in History" : "Saved recording transcribed — ready to insert")
           markRelayActivityAndScheduleIdleShutdown()
         } else {
           statusMessage = "Saved recording transcribed"
@@ -142,8 +158,11 @@ extension RelayController {
     recoverableRecordings = recoveryStore.recordings
   }
 
-  func addToHistory(_ text: String) throws {
-    try historyStore.add(text: text)
+  @discardableResult
+  func addToHistory(_ text: String) throws -> TranscriptHistoryItem {
+    try historyStore.removeExpired(retentionDays: configuration.historyRetentionDays)
+    let item = try historyStore.add(text: text)
     history = historyStore.items
+    return item
   }
 }

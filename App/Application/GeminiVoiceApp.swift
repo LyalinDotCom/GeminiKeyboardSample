@@ -13,10 +13,12 @@ struct GeminiVoiceApp: App {
       }
     #endif
     let configuration = AppConfiguration()
+    let relay = RelayController(configuration: configuration)
+    #if DEBUG && targetEnvironment(simulator)
+      relay.applyVisualTestScenario()
+    #endif
     _configuration = StateObject(wrappedValue: configuration)
-    _relay = StateObject(
-      wrappedValue: RelayController(configuration: configuration)
-    )
+    _relay = StateObject(wrappedValue: relay)
   }
 
   var body: some Scene {
@@ -47,6 +49,7 @@ struct GeminiVoiceApp: App {
     guard environment["GEMINI_VOICE_DISABLE_RELAY_AUTOSTART"] != "1" else { return }
     #if DEBUG
       guard environment["XCTestConfigurationFilePath"] == nil else { return }
+      guard environment["GEMINI_VOICE_VISUAL_TEST_SCENARIO"] == nil else { return }
     #endif
     await relay.applicationDidBecomeActive()
   }

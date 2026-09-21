@@ -1,0 +1,8 @@
+Use case: ads-marketing / compositing
+Asset: wide GitHub README hero for the Gemini Voice iOS developer sample.
+Create an elegant Apple-like product presentation using these FOUR real iPhone screenshots as the screen content. Left to right: 1 relay.png (Relay home), 2 keyboard.png (custom keyboard), 3 note-recording.png (live voice note), 4 note-saved.png (saved voice note with copy).
+Arrange four complete, upright, front-facing iPhones in a calm horizontal rhythm, thin graphite frames, accurate rounded corners, a subtle dimensional edge and soft contact shadows. Keep every screen fully visible; no overlap. Use the supplied screenshot interiors faithfully: preserve all UI text, icons, layout and proportions. Do not redesign or invent any app controls. These are real app screens, not conceptual mockups.
+Wide 16:9 landscape at 2K. Background: near-white with a very subtle cool blue ambient glow and quiet glass-like depth near the base, clean and minimal. Avoid rainbow colors, busy gradients, neon, scenery or props. Leave generous whitespace. The phones are the main focus.
+At the top, beautiful black sans-serif typography, exact title: "Gemini Voice". Smaller gray subtitle underneath, exact wording: "Speak. Save. Keep moving."
+Small understated labels beneath the phones: "Enable Relay", "Use your keyboard", "Record a note", "Copy and share".
+No other added text. No company logos, no App Store badge, no watermark. Polished and understated, like a native iOS app launch image. Do not crop off the phones or controls.

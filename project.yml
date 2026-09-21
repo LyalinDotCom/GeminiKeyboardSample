@@ -3,7 +3,7 @@ name: GeminiVoiceKeyboard
 options:
   bundleIdPrefix: com.example
   deploymentTarget:
-    iOS: "26.0"
+    iOS: "27.0"
   createIntermediateGroups: true
   generateEmptyDirectories: true
 
@@ -11,7 +11,7 @@ settings:
   base:
     CODE_SIGN_STYLE: Automatic
     SWIFT_VERSION: "5.0"
-    IPHONEOS_DEPLOYMENT_TARGET: "26.0"
+    IPHONEOS_DEPLOYMENT_TARGET: "27.0"
     TARGETED_DEVICE_FAMILY: "1,2"
     SUPPORTS_MACCATALYST: NO
     ENABLE_USER_SCRIPT_SANDBOXING: YES
@@ -38,8 +38,8 @@ targets:
         INFOPLIST_FILE: App/Info.plist
         CODE_SIGN_ENTITLEMENTS: App/GeminiVoice.entitlements
         ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
-        CURRENT_PROJECT_VERSION: 35
-        MARKETING_VERSION: 0.1.0
+        CURRENT_PROJECT_VERSION: 36
+        MARKETING_VERSION: 0.2.0
       configs:
         Debug:
           SWIFT_ACTIVE_COMPILATION_CONDITIONS: "$(inherited) GEMINI_PERSONAL_DEVICE"
@@ -67,8 +67,8 @@ targets:
         INFOPLIST_FILE: KeyboardExtension/Info.plist
         CODE_SIGN_ENTITLEMENTS: KeyboardExtension/GeminiVoiceKeyboard.entitlements
         SKIP_INSTALL: YES
-        CURRENT_PROJECT_VERSION: 35
-        MARKETING_VERSION: 0.1.0
+        CURRENT_PROJECT_VERSION: 36
+        MARKETING_VERSION: 0.2.0
       configs:
         Debug:
           SWIFT_ACTIVE_COMPILATION_CONDITIONS: "$(inherited) GEMINI_PERSONAL_DEVICE"
@@ -93,8 +93,8 @@ targets:
         CODE_SIGN_ENTITLEMENTS: LiveActivityExtension/GeminiVoiceActivity.entitlements
         APPLICATION_EXTENSION_API_ONLY: YES
         SKIP_INSTALL: YES
-        CURRENT_PROJECT_VERSION: 35
-        MARKETING_VERSION: 0.1.0
+        CURRENT_PROJECT_VERSION: 36
+        MARKETING_VERSION: 0.2.0
 
   GeminiVoiceTests:
     type: bundle.unit-test

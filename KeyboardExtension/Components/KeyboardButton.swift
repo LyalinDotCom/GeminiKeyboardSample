@@ -20,7 +20,7 @@ final class KeyboardButton: UIButton {
     let changes = {
       self.alpha = self.isEnabled ? (self.isHighlighted ? 0.72 : 1) : 0.38
       self.transform =
-        self.isHighlighted
+        self.isHighlighted && !UIAccessibility.isReduceMotionEnabled
         ? CGAffineTransform(scaleX: 0.94, y: 0.94)
         : .identity
       self.layer.shadowOpacity = self.isHighlighted ? 0.08 : 0.22
@@ -30,7 +30,7 @@ final class KeyboardButton: UIButton {
         : CGSize(width: 0, height: 1)
     }
 
-    if animated {
+    if animated && !UIAccessibility.isReduceMotionEnabled {
       UIView.animate(
         withDuration: isHighlighted ? 0.045 : 0.09,
         delay: 0,

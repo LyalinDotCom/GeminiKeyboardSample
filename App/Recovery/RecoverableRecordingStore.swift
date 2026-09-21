@@ -13,7 +13,8 @@ struct RecoverableRecording: Codable, Equatable, Identifiable {
   var transcriptSaved: Bool?
 
   var actionTitle: String {
-    action == .translate ? "Translation" : "Dictation"
+    if action == .note { return "Voice note" }
+    return action == .translate ? "Translation" : "Dictation"
   }
 }
 

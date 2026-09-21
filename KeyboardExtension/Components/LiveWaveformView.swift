@@ -18,7 +18,7 @@ final class LiveWaveformView: UIView {
     addSubview(stack)
 
     for bar in bars {
-      bar.backgroundColor = .systemCyan
+      bar.backgroundColor = .systemBlue
       bar.layer.cornerRadius = 3.5
       bar.translatesAutoresizingMaskIntoConstraints = false
       bar.widthAnchor.constraint(equalToConstant: 7).isActive = true
@@ -47,7 +47,11 @@ final class LiveWaveformView: UIView {
     for (index, constraint) in heightConstraints.enumerated() {
       let idleMotion = active ? CGFloat((index % 3) + 1) * 2 : 0
       constraint.constant = 12 + idleMotion + (62 * clamped * multipliers[index])
-      bars[index].backgroundColor = active ? .systemCyan : .systemGray3
+      bars[index].backgroundColor = active ? .systemBlue : .systemGray3
+    }
+    guard !UIAccessibility.isReduceMotionEnabled else {
+      layoutIfNeeded()
+      return
     }
     UIView.animate(
       withDuration: 0.14,

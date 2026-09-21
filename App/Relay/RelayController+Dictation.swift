@@ -5,6 +5,8 @@ import UIKit
 
 extension RelayController {
   func beginDictationFromKeyboardCommand(_ envelope: RelayCommandEnvelope) {
+    guard envelope.dictationAction != .note, noteStartupID == nil else { return }
+    if !noteCapturePhase.isBusy { isNoteCapturePresented = false }
     let storedPendingLaunch = store.pendingLaunchRequest()
     switch RelayStartAuthorizationPolicy.resolve(
       command: envelope,
@@ -100,8 +102,9 @@ extension RelayController {
       activeDictationAction = action
       activeStartedAt = startedAt
       let listeningMessage: String
-      listeningMessage =
-        action == .translate
+      listeningMessage = action == .note
+        ? "Recording a note…"
+        : action == .translate
         ? "Streaming live translation… tap again when finished"
         : "Streaming live transcription… tap the microphone again when finished"
       publish(

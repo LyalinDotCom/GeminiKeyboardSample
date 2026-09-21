@@ -49,6 +49,7 @@ extension RelayController {
   ) {
     idleShutdownWorkItem?.cancel()
     idleShutdownWorkItem = nil
+    idleShutdownDeadline = nil
     setLocalStatus(.error, message: message)
     store.publishStatus(.offline, message: message, offlineReason: offlineReason)
     relaySessionID = nil
@@ -69,5 +70,6 @@ extension RelayController {
   func setLocalStatus(_ status: RelayStatus, message: String) {
     self.status = status
     self.statusMessage = message
+    if status == .error { failNoteCapture(message) }
   }
 }

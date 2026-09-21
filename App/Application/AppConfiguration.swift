@@ -6,6 +6,7 @@ final class AppConfiguration: ObservableObject {
   private enum Key {
     static let apiKeyOverride = "configuration.gemini-api-key-override"
     static let translationTargetCode = TranslationPreferenceKey.targetCode
+    static let historyRetentionDays = "configuration.history-retention-days"
   }
 
   private let defaults: UserDefaults
@@ -35,6 +36,12 @@ final class AppConfiguration: ObservableObject {
 
   @Published private(set) var credentialPersistenceWarning: String?
 
+  @Published var historyRetentionDays: Int {
+    didSet {
+      defaults.set(historyRetentionDays, forKey: Key.historyRetentionDays)
+    }
+  }
+
   @Published var translationTargetCode: String {
     didSet {
       let resolved = TranslationLanguage.language(for: translationTargetCode)
@@ -56,6 +63,8 @@ final class AppConfiguration: ObservableObject {
     self.defaults = defaults
     self.sharedDefaults = sharedDefaults
     self.credentialStore = credentialStore
+    let savedRetention = defaults.integer(forKey: Key.historyRetentionDays)
+    self.historyRetentionDays = savedRetention > 0 ? savedRetention : 30
     let configuredEmbeddedAPIKey =
       (bundle.object(forInfoDictionaryKey: "GeminiDefaultAPIKey") as? String) ?? ""
     #if DEBUG

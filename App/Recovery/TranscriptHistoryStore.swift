@@ -15,7 +15,6 @@ struct TranscriptHistoryItem: Codable, Identifiable, Equatable {
 /// Keeps completed text durable before its only audio copy is removed.
 final class TranscriptHistoryStore {
   private static let fileName = "transcript-history.json"
-  private static let maximumItems = 20
 
   private let fileManager: FileManager
   private let directoryURL: URL?
@@ -40,9 +39,6 @@ final class TranscriptHistoryStore {
     let item = TranscriptHistoryItem(text: text, createdAt: createdAt)
     let oldItems = items
     items.insert(item, at: 0)
-    if items.count > Self.maximumItems {
-      items.removeLast(items.count - Self.maximumItems)
-    }
     do {
       try persist()
       return item
@@ -63,6 +59,28 @@ final class TranscriptHistoryStore {
     }
   }
 
+  func remove(id: UUID) throws {
+    try replaceItems(items.filter { $0.id != id })
+  }
+
+  func removeExpired(retentionDays: Int, now: Date = Date()) throws {
+    let cutoff = now.addingTimeInterval(-Double(max(1, retentionDays)) * 86_400)
+    let retained = items.filter { $0.createdAt >= cutoff }
+    guard retained.count != items.count else { return }
+    try replaceItems(retained)
+  }
+
+  private func replaceItems(_ updated: [TranscriptHistoryItem]) throws {
+    let oldItems = items
+    items = updated
+    do {
+      try persist()
+    } catch {
+      items = oldItems
+      throw error
+    }
+  }
+
   private func load() {
     guard let fileURL,
       let data = try? Data(contentsOf: fileURL),
@@ -70,7 +88,7 @@ final class TranscriptHistoryStore {
     else {
       return
     }
-    items = Array(decoded.sorted { $0.createdAt > $1.createdAt }.prefix(Self.maximumItems))
+    items = decoded.sorted { $0.createdAt > $1.createdAt }
   }
 
   private func persist() throws {

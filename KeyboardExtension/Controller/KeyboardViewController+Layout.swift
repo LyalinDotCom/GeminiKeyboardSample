@@ -67,8 +67,8 @@ extension KeyboardViewController {
 
     brandMarkView.translatesAutoresizingMaskIntoConstraints = false
     NSLayoutConstraint.activate([
-      brandMarkView.widthAnchor.constraint(equalToConstant: 38),
-      brandMarkView.heightAnchor.constraint(equalToConstant: 38),
+      brandMarkView.widthAnchor.constraint(equalToConstant: 44),
+      brandMarkView.heightAnchor.constraint(equalToConstant: 44),
     ])
     brandMarkView.tapHandler = { [weak self] in
       self?.openContainingAppFromBrandMark()
@@ -95,7 +95,7 @@ extension KeyboardViewController {
     processingStatusStack.setContentHuggingPriority(.defaultLow, for: .horizontal)
     processingStatusStack.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
 
-    processingIndicator.color = .systemCyan
+    processingIndicator.color = .systemBlue
     processingIndicator.hidesWhenStopped = true
 
     processingLabel.font = .systemFont(ofSize: 14, weight: .semibold)
@@ -137,8 +137,8 @@ extension KeyboardViewController {
 
     var cancelConfiguration = UIButton.Configuration.tinted()
     cancelConfiguration.cornerStyle = .capsule
-    cancelConfiguration.baseBackgroundColor = .systemRed
-    cancelConfiguration.baseForegroundColor = .systemRed
+    cancelConfiguration.baseBackgroundColor = .secondaryLabel
+    cancelConfiguration.baseForegroundColor = .secondaryLabel
     cancelConfiguration.image = UIImage(systemName: "xmark")
     cancelConfiguration.contentInsets = .zero
     cancelButton.configuration = cancelConfiguration
@@ -150,11 +150,11 @@ extension KeyboardViewController {
     cancelButton.isEnabled = false
     prepareActionButton(cancelButton)
 
-    var translateConfiguration = UIButton.Configuration.filled()
+    var translateConfiguration = UIButton.Configuration.tinted()
     translateConfiguration.cornerStyle = .capsule
-    translateConfiguration.baseBackgroundColor = .systemIndigo
-    translateConfiguration.baseForegroundColor = .white
-    translateConfiguration.image = UIImage(systemName: "character.bubble.fill")
+    translateConfiguration.baseBackgroundColor = .systemBlue
+    translateConfiguration.baseForegroundColor = .systemBlue
+    translateConfiguration.image = UIImage(systemName: "translate")
     translateConfiguration.contentInsets = .zero
     translateButton.configuration = translateConfiguration
     translateButton.accessibilityIdentifier = "keyboard-translate-button"
@@ -164,8 +164,8 @@ extension KeyboardViewController {
 
     var insertConfiguration = UIButton.Configuration.tinted()
     insertConfiguration.cornerStyle = .capsule
-    insertConfiguration.baseBackgroundColor = .systemCyan
-    insertConfiguration.baseForegroundColor = .systemCyan
+    insertConfiguration.baseBackgroundColor = .systemBlue
+    insertConfiguration.baseForegroundColor = .systemBlue
     insertConfiguration.image = UIImage(systemName: "arrow.down.doc.fill")
     insertConfiguration.imagePadding = 7
     insertConfiguration.title = "Insert latest"

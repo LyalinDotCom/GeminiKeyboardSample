@@ -19,6 +19,7 @@ extension RelayController {
   func markRelayActivityAndSuspendIdleShutdown() {
     idleShutdownWorkItem?.cancel()
     idleShutdownWorkItem = nil
+    idleShutdownDeadline = nil
   }
 
   func markRelayActivityAndScheduleIdleShutdown() {
@@ -29,6 +30,7 @@ extension RelayController {
   func scheduleIdleShutdownIfEligible() {
     idleShutdownWorkItem?.cancel()
     idleShutdownWorkItem = nil
+    idleShutdownDeadline = nil
     let operationIsBusy =
       status.isBusy
       || activeRequestID != nil
@@ -49,6 +51,7 @@ extension RelayController {
       }
     }
     idleShutdownWorkItem = workItem
+    idleShutdownDeadline = Date().addingTimeInterval(RelayIdleShutdownPolicy.timeout)
     DispatchQueue.main.asyncAfter(
       deadline: .now() + RelayIdleShutdownPolicy.timeout,
       execute: workItem
@@ -57,6 +60,7 @@ extension RelayController {
 
   func idleShutdownDeadlineReached() {
     idleShutdownWorkItem = nil
+    idleShutdownDeadline = nil
     let operationIsBusy =
       status.isBusy
       || activeRequestID != nil

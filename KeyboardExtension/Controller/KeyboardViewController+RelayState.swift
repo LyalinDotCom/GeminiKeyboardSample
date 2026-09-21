@@ -74,7 +74,7 @@ extension KeyboardViewController {
             ?? (launchFailed
               ? "Open Gemini Voice manually — × cancels"
               : "Opening Gemini Voice — × cancels"),
-          color: unavailableMessage != nil || launchFailed ? .systemOrange : .systemCyan
+          color: unavailableMessage != nil || launchFailed ? .systemOrange : .systemBlue
         )
         configureMicrophone(
           title: "Opening…",
@@ -117,7 +117,7 @@ extension KeyboardViewController {
 
     switch mode {
     case .openingHost:
-      setStatus("Starting dictation — × cancels", color: .systemCyan)
+      setStatus("Starting dictation — × cancels", color: .systemBlue)
       configureMicrophone(title: "Starting…", image: "waveform", color: .systemGray)
       configureTranslationButton(color: .systemGray)
       microphoneButton.isEnabled = false
@@ -132,7 +132,7 @@ extension KeyboardViewController {
       if activeDictationAction == .translate {
         setStatus(livePreview ?? "Listening — Translate finishes; × discards", color: .systemRed)
         configureMicrophone(title: "Dictate", image: "mic.fill", color: .systemBlue)
-        configureTranslationButton(title: "Finish", image: "arrow.up", color: .systemIndigo)
+        configureTranslationButton(title: "Finish", image: "arrow.up", color: .systemBlue)
         microphoneButton.isEnabled = false
         translateButton.isEnabled = true
       } else {
@@ -162,7 +162,7 @@ extension KeyboardViewController {
         translateButton.isEnabled = keyboardTranslationEnabled
       } else {
         cancelButton.isEnabled = true
-        setStatus(snapshot.message, color: .systemCyan)
+        setStatus(snapshot.message, color: .systemBlue)
         if activeDictationAction == .translate {
           configureMicrophone(title: "Dictate", image: "mic.fill", color: .systemBlue)
           configureTranslationButton(title: "…", image: "ellipsis", color: .systemGray)
@@ -178,7 +178,7 @@ extension KeyboardViewController {
         pendingResultKind == .ocr
           ? "OCR ready — tap Insert OCR"
           : "Text field changed — tap Insert latest",
-        color: .systemCyan
+        color: .systemBlue
       )
       configureMicrophone(title: "Dictate", image: "mic.fill", color: .systemBlue)
       configureTranslationButton()
@@ -188,7 +188,7 @@ extension KeyboardViewController {
     case .idle:
       setStatus(
         snapshot.status == .error ? snapshot.message : "Ready for Gemini dictation",
-        color: snapshot.status == .error ? .systemOrange : .systemGreen)
+        color: snapshot.status == .error ? .systemOrange : .systemBlue)
       configureMicrophone(title: "Dictate", image: "mic.fill", color: .systemBlue)
       configureTranslationButton()
       microphoneButton.isEnabled = true

@@ -12,9 +12,16 @@ else
   echo "XcodeGen not found; using the committed Xcode project."
 fi
 
-device_id="$(xcrun simctl list devices available | sed -nE 's/^[[:space:]]*iPhone[^\(]*\(([A-F0-9-]+)\) \((Booted|Shutdown)\).*$/\1/p' | head -n 1)"
+device_id="$(xcrun simctl list devices available --json | python3 -c '
+import json, sys
+devices = [device for runtime, entries in json.load(sys.stdin)["devices"].items()
+           if "iOS-27-" in runtime for device in entries
+           if device["name"].startswith("iPhone")]
+devices.sort(key=lambda device: device["state"] != "Booted")
+print(devices[0]["udid"] if devices else "")
+')"
 if [[ -z "$device_id" ]]; then
-  echo "No available iPhone simulator was found."
+  echo "No available iOS 27 iPhone simulator was found."
   exit 1
 fi
 

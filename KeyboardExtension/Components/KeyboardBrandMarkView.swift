@@ -1,10 +1,9 @@
 import UIKit
 
 final class KeyboardBrandMarkView: UIView {
-  private let gradientLayer = CAGradientLayer()
   private let iconView = UIImageView(
     image: UIImage(
-      systemName: "waveform", withConfiguration: UIImage.SymbolConfiguration(weight: .bold))
+      systemName: "waveform", withConfiguration: UIImage.SymbolConfiguration(weight: .semibold))
   )
 
   /// Invoked on a tap. The keyboard uses it to open the containing app.
@@ -17,18 +16,10 @@ final class KeyboardBrandMarkView: UIView {
     let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap))
     addGestureRecognizer(tap)
 
-    gradientLayer.colors = [
-      UIColor.systemCyan.cgColor,
-      UIColor.systemBlue.cgColor,
-      UIColor.systemPurple.cgColor,
-    ]
-    gradientLayer.startPoint = CGPoint(x: 0, y: 0)
-    gradientLayer.endPoint = CGPoint(x: 1, y: 1)
-    gradientLayer.borderWidth = 1.5
-    gradientLayer.borderColor = UIColor.white.withAlphaComponent(0.28).cgColor
-    layer.insertSublayer(gradientLayer, at: 0)
-
-    iconView.tintColor = .white
+    backgroundColor = .tertiarySystemFill
+    layer.cornerRadius = 12
+    layer.cornerCurve = .continuous
+    iconView.tintColor = .systemBlue
     iconView.contentMode = .scaleAspectFit
     iconView.translatesAutoresizingMaskIntoConstraints = false
     addSubview(iconView)
@@ -72,21 +63,17 @@ final class KeyboardBrandMarkView: UIView {
   private func setPressed(_ pressed: Bool) {
     UIView.animate(withDuration: pressed ? 0.05 : 0.15) {
       self.alpha = pressed ? 0.6 : 1
-      self.transform = pressed ? CGAffineTransform(scaleX: 0.94, y: 0.94) : .identity
+      self.transform = pressed && !UIAccessibility.isReduceMotionEnabled ? CGAffineTransform(scaleX: 0.94, y: 0.94) : .identity
     }
   }
 
-  override func layoutSubviews() {
-    super.layoutSubviews()
-    gradientLayer.frame = bounds
-    gradientLayer.cornerRadius = min(bounds.width, bounds.height) * 0.32
+  override func accessibilityActivate() -> Bool {
+    tapHandler?()
+    return true
   }
 
   func setStatus(_ text: String, accentColor: UIColor) {
     accessibilityValue = text
-    layer.shadowColor = accentColor.cgColor
-    layer.shadowOpacity = 0.24
-    layer.shadowRadius = 5
-    layer.shadowOffset = .zero
+    iconView.tintColor = accentColor
   }
 }

@@ -51,6 +51,7 @@ enum RelayCommand: String, Codable {
 enum RelayDictationAction: String, Codable {
   case transcribe
   case translate
+  case note
 }
 
 struct RelayLaunchRequest: Equatable {
@@ -74,7 +75,8 @@ struct RelayLaunchRequest: Equatable {
   }
 
   func makeURL() -> URL? {
-    guard Self.isValidRequestID(requestID),
+    guard dictationAction != .note,
+      Self.isValidRequestID(requestID),
       createdAt.timeIntervalSince1970.isFinite
     else {
       return nil
@@ -139,6 +141,7 @@ struct RelayLaunchRequest: Equatable {
       isValidRequestID(requestID),
       let rawAction = values["action"],
       let dictationAction = RelayDictationAction(rawValue: rawAction),
+      dictationAction != .note,
       let rawCreatedAt = values["createdAt"],
       let timestamp = TimeInterval(rawCreatedAt),
       timestamp.isFinite,

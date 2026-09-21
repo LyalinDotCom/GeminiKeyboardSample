@@ -69,7 +69,9 @@ The local WAV remains available until the operation resolves. A non-cancellation
 
 In-progress and user-finalized filenames are distinct. Only Finish renames a clip into the finalized form and writes retry metadata. This prevents an app crash during ordinary recording from silently uploading abandoned speech after the next launch.
 
-On success, completed text is durably added to a bounded history before audio deletion. If cleanup fails, the recording remains visible. Background-expiration and network failures settle into explicit saved-recording states instead of pretending the request completed.
+On success, completed text is durably added to history before audio deletion. History has no item-count limit. Its retention is configured in days (30 by default); expired text is removed on app initialization, foreground activation, setting changes, and before saving another item. Pending audio recovery is independent of text retention. If cleanup fails, the recording remains visible. Background-expiration and network failures settle into explicit saved-recording states instead of pretending the request completed.
+
+The containing app also starts `.note` captures directly, with no keyboard handoff. They use the same audio capture, Live transcription, and fallback pipeline. Their completed text goes to History and the note sheet's Copy/Share controls, without publishing a keyboard insertion. The note action is encoded in finalized recording filenames, so a retry after relaunch keeps the same destination. `RelayController+Notes.swift` owns the note presentation state; `NoteCaptureSheet.swift` renders recording, processing, failure, and saved-text states.
 
 ## Personal-device handoff
 

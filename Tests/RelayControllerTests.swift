@@ -42,8 +42,76 @@ final class RelayControllerTests: XCTestCase {
   private var defaults: UserDefaults!
   private var directoryURL: URL!
 
+  func testIdleDeadlineTracksSchedulingSuspensionAndStop() throws {
+    let (controller, _) = try makeController()
+    controller.isRelayRunning = true
+    controller.status = .idle
+    controller.scheduleIdleShutdownIfEligible()
+    let deadline = try XCTUnwrap(controller.idleShutdownDeadline)
+    XCTAssertEqual(deadline.timeIntervalSinceNow, 120, accuracy: 1)
+
+    controller.markRelayActivityAndSuspendIdleShutdown()
+    XCTAssertNil(controller.idleShutdownDeadline)
+    controller.scheduleIdleShutdownIfEligible()
+    XCTAssertNotNil(controller.idleShutdownDeadline)
+    controller.stopRelay()
+    XCTAssertNil(controller.idleShutdownDeadline)
+
+    controller.isRelayRunning = true
+    controller.status = .recording
+    controller.scheduleIdleShutdownIfEligible()
+    XCTAssertNil(controller.idleShutdownDeadline)
+    controller.isRelayRunning = false
+  }
+
   func testMaximumDictationDurationIsFiveMinutes() {
     XCTAssertEqual(RelayController.maximumDictationDuration, 5 * 60)
+  }
+
+  func testNoteSavesDurablyWithoutPublishingAKeyboardInsertion() throws {
+    let (controller, store) = try makeController()
+    let originalResult = store.snapshot().resultSequence
+    let item = try controller.completeTranscription(
+      "Remember to take the scenic route.", requestID: UUID().uuidString, action: .note
+    )
+    XCTAssertEqual(controller.noteCapturePhase, .saved(item))
+    XCTAssertEqual(controller.history.first, item)
+    XCTAssertEqual(TranscriptHistoryStore(directoryURL: directoryURL.appendingPathComponent("AppData")).items, [item])
+    XCTAssertEqual(store.snapshot().resultSequence, originalResult)
+    XCTAssertNil(store.snapshot().transcript)
+  }
+
+  func testNoteRetrySavesTextWithoutPublishingAKeyboardInsertion() async throws {
+    let (controller, store) = try makeController()
+    let requestID = UUID().uuidString
+    let url = directoryURL.appendingPathComponent("Recordings/completed-note-en-\(requestID).wav")
+    try Data([0, 1, 2, 3]).write(to: url)
+    let recording = try controller.recoveryStore.stage(
+      CapturedAudioSegment(requestID: requestID, url: url, startedAt: Date().addingTimeInterval(-2), endedAt: Date()),
+      action: .note, translationTargetCode: "en"
+    )
+    XCTAssertEqual(recording.actionTitle, "Voice note")
+    let reloaded = RecoverableRecordingStore(directoryURL: directoryURL.appendingPathComponent("Recordings"))
+    XCTAssertEqual(reloaded.recordings.first?.action, .note)
+    controller.retryRecording(recording)
+    for _ in 0..<100 where controller.retryingRecordingID != nil {
+      try await Task.sleep(for: .milliseconds(50))
+    }
+    XCTAssertNil(controller.retryingRecordingID)
+    XCTAssertEqual(controller.history.first?.text, StubOCRURLProtocol.extractedText)
+    XCTAssertTrue(controller.recoveryStore.recordings.isEmpty)
+    XCTAssertNil(store.snapshot().transcript)
+  }
+
+  func testHistoryRetentionDefaultsToThirtyDaysAndPersistsChanges() throws {
+    let (controller, _) = try makeController()
+    XCTAssertEqual(controller.configuration.historyRetentionDays, 30)
+    try controller.historyStore.add(text: "Old note", createdAt: Date().addingTimeInterval(-10 * 86_400))
+    try controller.historyStore.add(text: "New note")
+    controller.configuration.historyRetentionDays = 7
+    controller.applyHistoryRetention()
+    XCTAssertEqual(controller.history.map(\.text), ["New note"])
+    XCTAssertEqual(AppConfiguration(defaults: defaults).historyRetentionDays, 7)
   }
 
   func testCancelCommandStopsProcessingAndDeletesStagedRecording() throws {

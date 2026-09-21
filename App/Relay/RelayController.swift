@@ -47,6 +47,7 @@ final class RelayController: ObservableObject {
 
   @Published var isRelayRunning = false
   @Published var isRelayStarting = false
+  @Published var idleShutdownDeadline: Date?
   @Published var status: RelayStatus = .offline
   @Published var statusMessage = "Relay is offline"
   @Published var history: [TranscriptHistoryItem] = []
@@ -60,6 +61,11 @@ final class RelayController: ObservableObject {
   @Published var isKeyboardHandoffActive = false
   @Published var requiresManualKeyboardReturn = false
   @Published var audioLevel: Double = 0
+  @Published var isNoteCapturePresented = false
+  @Published var noteCapturePhase: NoteCapturePhase = .preparing
+  @Published var notePreviewText = ""
+  @Published var historyError: String?
+  var noteStartupID: UUID?
 
   let configuration: AppConfiguration
   let store: SharedRelayStore
@@ -117,6 +123,7 @@ final class RelayController: ObservableObject {
     self.historyStore = historyStore
     history = historyStore.items
     recoverableRecordings = recoveryStore.recordings
+    applyHistoryRetention()
 
     capture.levelHandler = { [weak self] level in
       DispatchQueue.main.async { [weak self] in
@@ -132,10 +139,12 @@ final class RelayController: ObservableObject {
 
   func applicationDidBecomeActive() async {
     guard UIApplication.shared.applicationState == .active else { return }
+    applyHistoryRetention()
     if pendingLaunchRequest == nil {
       pendingLaunchRequest = store.pendingLaunchRequest()
     }
     if let pendingLaunchRequest {
+      if !noteCapturePhase.isBusy { isNoteCapturePresented = false }
       isKeyboardHandoffActive = true
       requiresManualKeyboardReturn = manualReturnRequired(
         for: pendingLaunchRequest
@@ -227,6 +236,8 @@ final class RelayController: ObservableObject {
     message: String = "Relay stopped",
     offlineReason: RelayOfflineReason = .stopped
   ) {
+    failNoteCapture("Recording stopped. Start a new note when you’re ready.")
+    noteStartupID = nil
     relayStartupGeneration += 1
     transcriptionGeneration += 1
     transcriptionTask?.cancel()
@@ -241,6 +252,7 @@ final class RelayController: ObservableObject {
     pendingFinishWorkItem = nil
     idleShutdownWorkItem?.cancel()
     idleShutdownWorkItem = nil
+    idleShutdownDeadline = nil
     cancelAutomaticReturnToKeyboard()
     activeRequestID = nil
     activeDictationAction = nil
@@ -250,6 +262,7 @@ final class RelayController: ObservableObject {
     discardPendingLaunchRequest()
     idleShutdownWorkItem?.cancel()
     idleShutdownWorkItem = nil
+    idleShutdownDeadline = nil
 
     capture.stop()
     pollTimer?.cancel()
@@ -292,6 +305,8 @@ final class RelayController: ObservableObject {
       }
       return
     }
+
+    failNoteCapture("Recording was interrupted by an audio change. Please start a new note.")
 
     maximumDurationWorkItem?.cancel()
     maximumDurationWorkItem = nil
